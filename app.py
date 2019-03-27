@@ -2,8 +2,11 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
+import pandas as pd
 
 ########### Set up the chart
+ratios_df = pd.read_csv('ratios.csv')
+ratios_list = ratios_df.ratio[1:6].tolist()
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Some other beer']
 
 bitterness = go.Bar(
@@ -19,8 +22,8 @@ alcohol = go.Bar(
     marker={'color':'darkgreen'}
 )
 stream_ratio = go.Bar(
-    x=[20, 14, 23],
-    y=['x1', 'x2', 'x3'],
+    x=ratios_list,
+    y=['x1', 'x2', 'x3', 'x4', 'x5'],
     orientation='h'
 )
 
