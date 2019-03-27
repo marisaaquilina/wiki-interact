@@ -118,6 +118,8 @@ server = app.server
 
 app.layout = html.Div(
     children=[
+        navbar,
+        body,
         html.H1('Spotify'),
         html.H2('Introduction'),
         html.P(intro_content),
