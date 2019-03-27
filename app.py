@@ -28,18 +28,17 @@ alcohol = go.Bar(
 )
 stream_ratio = go.Bar(
     x=ratios_vals,
-    y=['x1', 'x2', 'x3', 'x4', 'x5'],
-    text=['1.4 times more streams on weekends' for i in range(5)],
+    y=ratios_labels,
+    text=[str(i) + 'times more weekend streams' for i in ratios_vals],
     textposition='auto',
     orientation='h',
     marker=dict(
-        color='rgb(158,202,225)',
+        color='rgba(158,202,225,0.6)',
         line=dict(
-            color='rgb(8,48,107)',
-            width=1.5
+            color='rgba(8,48,107,1)',
+            width=1
         ),
-    ),
-    opacity=0.6
+    )
 )
 
 beer_data = [bitterness, alcohol]
