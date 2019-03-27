@@ -6,7 +6,12 @@ import pandas as pd
 
 ########### Set up the chart
 ratios_df = pd.read_csv('ratios.csv')
-ratios_list = ratios_df.ratio[1:6].tolist()
+ratios_vals = ratios_df.ratio[0:5].tolist()
+ratios_labels = ratios_df.Artist[0:5].tolist()
+
+ratios_content = (
+    'We were interested in seeing which artist’s listeners tend to stream their music more on weekends than weekdays. We focused on the most popular artists on the Top 200 chart and calculated the ratio of average streams on the weekends to the average streams on weekdays. This means that the larger numbers in this graph represent a higher difference in average number of streams on the weekends than weekdays. For example, people tended to stream Post Malone 8% more on weekends than weekdays.'
+)
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Some other beer']
 
 bitterness = go.Bar(
@@ -22,9 +27,19 @@ alcohol = go.Bar(
     marker={'color':'darkgreen'}
 )
 stream_ratio = go.Bar(
-    x=ratios_list,
+    x=ratios_vals,
     y=['x1', 'x2', 'x3', 'x4', 'x5'],
-    orientation='h'
+    text=['1.4 times more streams on weekends' for i in range(5)],
+    textposition='auto',
+    orientation='h',
+    marker=dict(
+        color='rgb(158,202,225)',
+        line=dict(
+            color='rgb(8,48,107)',
+            width=1.5
+        ),
+    ),
+    opacity=0.6
 )
 
 beer_data = [bitterness, alcohol]
@@ -48,6 +63,7 @@ app.layout = html.Div(
             id='flyingdog',
             figure=beer_fig
         ),
+        html.P(ratios_content),
         dcc.Graph(
             figure={
                 'data':stream_ratio_data
