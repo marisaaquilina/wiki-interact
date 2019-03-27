@@ -5,15 +5,13 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
 import pandas as pd
 
-########### Set up the chart
 ratios_df = pd.read_csv('ratios.csv').dropna()
-ratios_vals = ratios_df.ratio[0:5].tolist()
-ratios_labels = ratios_df.Artist[0:5].tolist()
+streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
+
 len = ratios_df.ratio.size
 low_ratios_vals = ratios_df.ratio[len-5:len].tolist()
 low_ratios_labels = ratios_df.Artist[len-5:len].tolist()
 
-streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 ratios_content = (
     'We were interested in seeing which artist’s listeners tend to stream their music more on weekends than weekdays. We focused on the most popular artists on the Top 200 chart and calculated the ratio of average streams on the weekends to the average streams on weekdays. This means that the larger numbers in this graph represent a higher difference in average number of streams on the weekends than weekdays. For example, people tended to stream Post Malone 8% more on weekends than weekdays.'
 )
@@ -23,10 +21,27 @@ intro_content = (
 user_beh_content = (
     'Inspired by our own avid use of Spotify, we first wanted to delve into user behavior of Spotify, including streaming trends in response to significant events and day to day listening patterns.'
 )
+
+df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
+
+trace_high = go.Scatter(
+                x=df.Date,
+                y=df['AAPL.High'],
+                name = "AAPL High",
+                line = dict(color = '#17BECF'),
+                opacity = 0.8)
+
+trace_low = go.Scatter(
+                x=df.Date,
+                y=df['AAPL.Low'],
+                name = "AAPL Low",
+                line = dict(color = '#7F7F7F'),
+                opacity = 0.8)
+
 stream_ratio = go.Bar(
-    x=ratios_vals,
-    y=ratios_labels,
-    text=[str(i)[0:3] + ' times more weekend streams' for i in ratios_vals],
+    x=ratios_df.ratio[0:5].tolist(),
+    y=ratios_df.Artist[0:5].tolist(),
+    text=[str(i)[0:3] + ' times more weekend streams' for i in ratios_df.ratio[0:5].tolist()],
     textposition='auto',
     orientation='h',
     marker=dict(
@@ -54,10 +69,19 @@ low_stream_ratio = go.Bar(
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
+data = [trace_high,trace_low]
+
 beer_layout = go.Layout(
     barmode='group',
     title = 'Beer Comparison'
 )
+
+layout = go.Layout(
+    title = "Manually Set Date Range",
+    xaxis = dict(
+        range = ['2016-07-01','2016-12-31'])
+)
+
 
 navbar = dbc.NavbarSimple(
     children=[
@@ -77,6 +101,8 @@ navbar = dbc.NavbarSimple(
     brand_href="#",
     sticky="top",
 )
+
+stock_fig = go.Figure(data=data, layout=layout)
 
 body = dbc.Container(
     [
@@ -126,6 +152,14 @@ body = dbc.Container(
             figure={
                 'data':low_stream_ratio_data
             }
+        ),
+        dcc.Graph(
+            id='flyingdog',
+            config={
+                "displaylogo": False,
+                'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
+            },
+            figure=stock_fig
         )
     ],
     className="mt-4",
