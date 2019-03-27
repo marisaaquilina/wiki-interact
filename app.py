@@ -72,7 +72,7 @@ navbar = dbc.NavbarSimple(
             ],
         ),
     ],
-    brand="Demo",
+    brand="SPEC",
     brand_href="#",
     sticky="top",
 )
@@ -83,30 +83,11 @@ body = dbc.Container(
             [
                 dbc.Col(
                     [
-                        html.H2("Heading"),
-                        html.P(
-                            """\
-Donec id elit non mi porta gravida at eget metus.
-Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non
-mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed
-odio dui."""
-                        ),
-                        dbc.Button("View details", color="secondary"),
+                        html.H2("Introduction"),
+                        html.P(intro_content)
                     ],
-                    md=4,
-                ),
-                dbc.Col(
-                    [
-                        html.H2("Graph"),
-                        dcc.Graph(
-                            figure={"data": [{"x": [1, 2, 3], "y": [1, 4, 9]}]}
-                        ),
-                    ]
-                ),
+                    md=8,
+                )
             ]
         )
     ],
@@ -121,8 +102,6 @@ app.layout = html.Div(
         navbar,
         body,
         html.H1('Spotify'),
-        html.H2('Introduction'),
-        html.P(intro_content),
         html.H2('User Behavior'),
         html.P(user_beh_content),
         html.H3('Weekend to Weekday Stream Ratios'),
