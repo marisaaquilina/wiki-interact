@@ -79,6 +79,9 @@ navbar = dbc.NavbarSimple(
 body = dbc.Container(
     [
         dbc.Row(
+            html.H1("Spotify")
+        ),
+        dbc.Row(
             [
                 dbc.Col(
                     [
@@ -99,21 +102,18 @@ body = dbc.Container(
                     md=12,
                 )
             ]
-        )
-    ],
-    className="mt-4",
-)
-
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
-server = app.server
-
-app.layout = html.Div(
-    children=[
-        html.H1('Spotify'),
-        navbar,
-        body,
-        html.H3('Weekend to Weekday Stream Ratios'),
-        html.P(ratios_content),
+        ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        html.H3('Weekend to Weekday Stream Ratios'),
+                        html.P(ratios_content),
+                    ],
+                    md=12,
+                )
+            ]
+        ),
         dcc.Graph(
             figure={
                 'data':stream_ratio_data
@@ -124,6 +124,17 @@ app.layout = html.Div(
                 'data':low_stream_ratio_data
             }
         )
+    ],
+    className="mt-4",
+)
+
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
+
+app.layout = html.Div(
+    children=[
+        navbar,
+        body
     ]
 )
 
