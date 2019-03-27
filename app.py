@@ -2,6 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
+import plotly.plotly as py
 
 ########### Set up the chart
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Some other beer']
@@ -18,8 +19,14 @@ alcohol = go.Bar(
     name='ABV',
     marker={'color':'darkgreen'}
 )
+stream_ratio = go.Bar(
+    x=[20, 14, 23],
+    y=['x1', 'x2', 'x3'],
+    orientation='h'
+)
 
 beer_data = [bitterness, alcohol]
+stream_ratio_data = [stream_ratio]
 beer_layout = go.Layout(
     barmode='group',
     title = 'Beer Comparison'
@@ -32,12 +39,18 @@ beer_fig = go.Figure(data=beer_data, layout=beer_layout)
 app = dash.Dash()
 server = app.server
 
-app.layout = html.Div(children=[
-    html.H1('Flying Dog Beers'),
-    dcc.Graph(
-        id='flyingdog',
-        figure=beer_fig
-    )]
+app.layout = html.Div(
+    children=[
+        html.H1('Spotify'),
+        dcc.Graph(
+            id='flyingdog',
+            figure=beer_fig
+        ),
+        dcc.Graph(
+            figure={
+                'data':stream_ratio_data
+            })
+    ]
 )
 
 if __name__ == '__main__':
