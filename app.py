@@ -2,7 +2,6 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
-import plotly.plotly as py
 
 ########### Set up the chart
 beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Some other beer']
@@ -36,7 +35,7 @@ beer_fig = go.Figure(data=beer_data, layout=beer_layout)
 
 ########### Display the chart
 
-app = dash.Dash()
+app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div(
