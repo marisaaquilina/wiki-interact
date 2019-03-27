@@ -1,6 +1,5 @@
 import dash
 import dash_core_components as dcc
-import dash_bootstrap_components as dbc
 import dash_html_components as html
 import plotly.graph_objs as go
 import pandas as pd
@@ -44,7 +43,7 @@ low_stream_ratio = go.Bar(
     marker=dict(
         color='rgba(158,202,225,0.6)',
         line=dict(
-            color='rgba(8,48,107,0.4)',
+            color='rgba(8,48,107,0.7)',
             width=1
         ),
     )
@@ -58,69 +57,12 @@ beer_layout = go.Layout(
 )
 
 ########### Display the chart
-navbar = dbc.NavbarSimple(
-    children=[
-        dbc.NavItem(dbc.NavLink("Link", href="#")),
-        dbc.DropdownMenu(
-            nav=True,
-            in_navbar=True,
-            label="Menu",
-            children=[
-                dbc.DropdownMenuItem("Entry 1"),
-                dbc.DropdownMenuItem("Entry 2"),
-                dbc.DropdownMenuItem(divider=True),
-                dbc.DropdownMenuItem("Entry 3"),
-            ],
-        ),
-    ],
-    brand="Demo",
-    brand_href="#",
-    sticky="top",
-)
 
-body = dbc.Container(
-    [
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.H2("Heading"),
-                        html.P(
-                            """\
-Donec id elit non mi porta gravida at eget metus.
-Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum
-nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
-malesuada magna mollis euismod. Donec sed odio dui. Donec id elit non
-mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus
-commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit
-amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed
-odio dui."""
-                        ),
-                        dbc.Button("View details", color="secondary"),
-                    ],
-                    md=4,
-                ),
-                dbc.Col(
-                    [
-                        html.H2("Graph"),
-                        dcc.Graph(
-                            figure={"data": [{"x": [1, 2, 3], "y": [1, 4, 9]}]}
-                        ),
-                    ]
-                ),
-            ]
-        )
-    ],
-    className="mt-4",
-)
-
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__)
 server = app.server
 
 app.layout = html.Div(
     children=[
-        navbar,
-        body,
         html.H1('Spotify'),
         html.H2('Introduction'),
         html.P(intro_content),
