@@ -15,6 +15,9 @@ ratios_content = (
     'We were interested in seeing which artist’s listeners tend to stream their music more on weekends than weekdays. We focused on the most popular artists on the Top 200 chart and calculated the ratio of average streams on the weekends to the average streams on weekdays. This means that the larger numbers in this graph represent a higher difference in average number of streams on the weekends than weekdays. For example, people tended to stream Post Malone 8% more on weekends than weekdays.'
 )
 intro_content = (
+    'As a group of ambitious statistics and computer science students first stepping foot into the world of data analysis and visualization, it would be an understatement to describe us as a group of kids in a candy shop. With a fresh understanding of statistical analysis softwares in a world where datasets are as plentiful as tweets about Donald Trump, we are excited to present our findings from our little niche of Spotify data.'
+)
+user_beh_content = (
     'Inspired by our own avid use of Spotify, we first wanted to delve into user behavior of Spotify, including streaming trends in response to significant events and day to day listening patterns.'
 )
 stream_ratio = go.Bar(
@@ -60,8 +63,12 @@ server = app.server
 
 app.layout = html.Div(
     children=[
-        html.H2(intro_content),
         html.H1('Spotify'),
+        html.H2('Introduction'),
+        html.P(intro_content),
+        html.H2('User Behavior'),
+        html.P(user_beh_content),
+        html.H3('Weekend to Weekday Stream Ratios'),
         html.P(ratios_content),
         dcc.Graph(
             figure={
