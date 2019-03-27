@@ -14,19 +14,8 @@ low_ratios_labels = ratios_df.Artist[len-5:len].tolist()
 ratios_content = (
     'We were interested in seeing which artist’s listeners tend to stream their music more on weekends than weekdays. We focused on the most popular artists on the Top 200 chart and calculated the ratio of average streams on the weekends to the average streams on weekdays. This means that the larger numbers in this graph represent a higher difference in average number of streams on the weekends than weekdays. For example, people tended to stream Post Malone 8% more on weekends than weekdays.'
 )
-beers=['Chesapeake Stout', 'Snake Dog IPA', 'Imperial Porter', 'Some other beer']
-
-bitterness = go.Bar(
-    x=beers,
-    y=[35, 60, 85, 65],
-    name='IBU',
-    marker={'color':'lightblue'}
-)
-alcohol = go.Bar(
-    x=beers,
-    y=[5.4, 7.1, 9.2, 11.3],
-    name='ABV',
-    marker={'color':'darkgreen'}
+intro_content = (
+    'Inspired by our own avid use of Spotify, we first wanted to delve into user behavior of Spotify, including streaming trends in response to significant events and day to day listening patterns.'
 )
 stream_ratio = go.Bar(
     x=ratios_vals,
@@ -57,15 +46,12 @@ low_stream_ratio = go.Bar(
     )
 )
 
-beer_data = [bitterness, alcohol]
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
 beer_layout = go.Layout(
     barmode='group',
     title = 'Beer Comparison'
 )
-
-beer_fig = go.Figure(data=beer_data, layout=beer_layout)
 
 ########### Display the chart
 
@@ -74,11 +60,8 @@ server = app.server
 
 app.layout = html.Div(
     children=[
+        html.H2(intro_content),
         html.H1('Spotify'),
-        dcc.Graph(
-            id='flyingdog',
-            figure=beer_fig
-        ),
         html.P(ratios_content),
         dcc.Graph(
             figure={
