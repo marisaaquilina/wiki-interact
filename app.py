@@ -12,6 +12,8 @@ ratios_labels = ratios_df.Artist[0:5].tolist()
 len = ratios_df.ratio.size
 low_ratios_vals = ratios_df.ratio[len-5:len].tolist()
 low_ratios_labels = ratios_df.Artist[len-5:len].tolist()
+
+streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 ratios_content = (
     'We were interested in seeing which artist’s listeners tend to stream their music more on weekends than weekdays. We focused on the most popular artists on the Top 200 chart and calculated the ratio of average streams on the weekends to the average streams on weekdays. This means that the larger numbers in this graph represent a higher difference in average number of streams on the weekends than weekdays. For example, people tended to stream Post Malone 8% more on weekends than weekdays.'
 )
@@ -109,6 +111,7 @@ body = dbc.Container(
                     [
                         html.H3('Weekend to Weekday Stream Ratios'),
                         html.P(ratios_content),
+                        html.P(streams_df.Streams[0:3].tolist())
                     ],
                     md=12,
                 )
