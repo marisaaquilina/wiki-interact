@@ -1,3 +1,10 @@
-.modebar{
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro');
+
+h1 {
+    font-family: 'Source Serif Pro', serif;
+    text-align: center;
+}
+
+.modebar {
       display: none !important;
 }
