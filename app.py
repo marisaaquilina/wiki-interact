@@ -59,7 +59,6 @@ beer_layout = go.Layout(
 
 navbar = dbc.NavbarSimple(
     children=[
-        dbc.NavItem(dbc.NavLink("Link", href="#")),
         dbc.DropdownMenu(
             nav=True,
             in_navbar=True,
@@ -86,7 +85,18 @@ body = dbc.Container(
                         html.H2("Introduction"),
                         html.P(intro_content)
                     ],
-                    md=8,
+                    md=12,
+                )
+            ]
+        ),
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        html.H2("User Behavior"),
+                        html.P(user_beh_content)
+                    ],
+                    md=12,
                 )
             ]
         )
@@ -99,11 +109,9 @@ server = app.server
 
 app.layout = html.Div(
     children=[
+        html.H1('Spotify'),
         navbar,
         body,
-        html.H1('Spotify'),
-        html.H2('User Behavior'),
-        html.P(user_beh_content),
         html.H3('Weekend to Weekday Stream Ratios'),
         html.P(ratios_content),
         dcc.Graph(
