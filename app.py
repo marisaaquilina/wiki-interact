@@ -124,30 +124,27 @@ navbar = dbc.NavbarSimple(
     sticky="top",
 )
 
+jumbotron = dbc.Jumbotron(
+    [
+        html.H1("Spotify", className="display-3"),
+        html.P(
+            "An exploration of the styles of songs and behaviors of listeners on Spotify"
+        )
+    ]
+)
+
 stock_fig = go.Figure(data=data, layout=layout)
 
 tab1_content = (
     html.H2("User Behavior")
 )
 
-tab2_content = dbc.Card(
-    dbc.CardBody(
-        [
-            dbc.CardText("This is tab 2!"),
-            dbc.Button("Don't click here", color="danger"),
-        ]
-    ),
-    className="mt-3",
+tab2_content = (
+    html.H2("Our Favorite Artists")
 )
 
-tab3_content = dbc.Card(
-    dbc.CardBody(
-        [
-            dbc.CardText("This is tab 3!"),
-            dbc.Button("Don't click here", color="danger"),
-        ]
-    ),
-    className="mt-3",
+tab3_content = (
+    html.H2("Song Patterns")
 )
 
 tabs = dbc.Tabs(
