@@ -146,11 +146,21 @@ tab2_content = dbc.Card(
     className="mt-3",
 )
 
+tab3_content = dbc.Card(
+    dbc.CardBody(
+        [
+            dbc.CardText("This is tab 3!"),
+            dbc.Button("Don't click here", color="danger"),
+        ]
+    ),
+    className="mt-3",
+)
 
 tabs = dbc.Tabs(
     [
-        dbc.Tab(tab1_content, label="Tab 1"),
-        dbc.Tab(tab2_content, label="Tab 2"),
+        dbc.Tab(tab1_content, label="User Behavior"),
+        dbc.Tab(tab2_content, label="Our Fave Artists"),
+        dbc.Tab(tab3_content, label="Song Patterns"),
     ]
 )
 
@@ -164,7 +174,8 @@ body = dbc.Container(
                 dbc.Col(
                     [
                         html.H2("Introduction"),
-                        html.P(intro_content)
+                        html.P(intro_content),
+                        tabs
                     ],
                     md=12,
                 )
@@ -221,7 +232,6 @@ server = app.server
 app.layout = html.Div(
     children=[
         navbar,
-        tabs,
         body
     ]
 )
