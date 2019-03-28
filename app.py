@@ -24,17 +24,17 @@ user_beh_content = (
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
-trace_high = go.Scatter(
+ozuna = go.Scatter(
                 x=streams_df[streams_df.Artist == "Ozuna"].Date,
                 y=streams_df[streams_df.Artist == "Ozuna"].Streams,
                 name = "Ozuna",
                 line = dict(color = '#17BECF'),
                 opacity = 0.8)
 
-trace_low = go.Scatter(
-                x=df.Date,
-                y=df['AAPL.Low'],
-                name = "AAPL Low",
+sheeran = go.Scatter(
+                x=streams_df[streams_df.Artist == "Ed Sheeran"].Date,
+                y=streams_df[streams_df.Artist == "Ed Sheeran"].Streams,
+                name = "Ed Sheeran",
                 line = dict(color = '#7F7F7F'),
                 opacity = 0.8)
 
@@ -69,7 +69,7 @@ low_stream_ratio = go.Bar(
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
-data = [trace_high,trace_low]
+data = [ozuna,sheeran]
 
 beer_layout = go.Layout(
     barmode='group',
@@ -77,7 +77,7 @@ beer_layout = go.Layout(
 )
 
 layout = go.Layout(
-    title = "Manually Set Date Range",
+    title = "Streams per Day of Top 5 Artists",
     xaxis = dict(
         range = ['2017-01-01','2017-12-31'])
 )
