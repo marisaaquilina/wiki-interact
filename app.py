@@ -126,14 +126,8 @@ navbar = dbc.NavbarSimple(
 
 stock_fig = go.Figure(data=data, layout=layout)
 
-tab1_content = dbc.Card(
-    dbc.CardBody(
-        [
-            dbc.CardText("This is tab 1!"),
-            dbc.Button("Click here", color="success"),
-        ]
-    ),
-    className="mt-3",
+tab1_content = (
+    html.H2("User Behavior")
 )
 
 tab2_content = dbc.Card(
