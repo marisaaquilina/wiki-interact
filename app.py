@@ -158,9 +158,6 @@ tabs = dbc.Tabs(
 body = dbc.Container(
     [
         dbc.Row(
-            html.H1("Spotify")
-        ),
-        dbc.Row(
             [
                 dbc.Col(
                     [
@@ -223,6 +220,7 @@ server = app.server
 app.layout = html.Div(
     children=[
         navbar,
+        jumbotron,
         body
     ]
 )
