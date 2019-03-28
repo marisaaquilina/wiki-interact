@@ -28,15 +28,37 @@ ozuna = go.Scatter(
                 x=streams_df[streams_df.Artist == "Ozuna"].Date,
                 y=streams_df[streams_df.Artist == "Ozuna"].Streams,
                 name = "Ozuna",
-                line = dict(color = '#17BECF'),
+                line = dict(color = '#90DAB5'),
                 opacity = 0.8)
 
 sheeran = go.Scatter(
                 x=streams_df[streams_df.Artist == "Ed Sheeran"].Date,
                 y=streams_df[streams_df.Artist == "Ed Sheeran"].Streams,
                 name = "Ed Sheeran",
-                line = dict(color = '#7F7F7F'),
+                line = dict(color = '#3F94AB'),
                 opacity = 0.8)
+
+malone = go.Scatter(
+                x=streams_df[streams_df.Artist == "Post Malone"].Date,
+                y=streams_df[streams_df.Artist == "Post Malone"].Streams,
+                name = "Post Malone",
+                line = dict(color = '#6285B2'),
+                opacity = 0.8)
+
+drake = go.Scatter(
+                x=streams_df[streams_df.Artist == "Drake"].Date,
+                y=streams_df[streams_df.Artist == "Drake"].Streams,
+                name = "Drake",
+                line = dict(color = '#4B4782'),
+                opacity = 0.8)
+
+chainsmokers = go.Scatter(
+                x=streams_df[streams_df.Artist == "The Chainsmokers"].Date,
+                y=streams_df[streams_df.Artist == "The Chainsmokers"].Streams,
+                name = "The Chainsmokers",
+                line = dict(color = '#3E3E3E'),
+                opacity = 0.8)
+
 
 stream_ratio = go.Bar(
     x=ratios_df.ratio[0:5].tolist(),
@@ -69,7 +91,7 @@ low_stream_ratio = go.Bar(
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
-data = [ozuna,sheeran]
+data = [ozuna,sheeran,chainsmokers,malone,drake]
 
 beer_layout = go.Layout(
     barmode='group',
