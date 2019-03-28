@@ -25,9 +25,9 @@ user_beh_content = (
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
 trace_high = go.Scatter(
-                x=df.Date,
-                y=df['AAPL.High'],
-                name = "AAPL High",
+                x=streams_df[streams_df.Artist == "Ozuna"].Date,
+                y=streams_df[streams_df.Artist == "Ozuna"].Streams,
+                name = "Ozuna",
                 line = dict(color = '#17BECF'),
                 opacity = 0.8)
 
@@ -79,7 +79,7 @@ beer_layout = go.Layout(
 layout = go.Layout(
     title = "Manually Set Date Range",
     xaxis = dict(
-        range = ['2016-07-01','2016-12-31'])
+        range = ['2017-01-01','2017-12-31'])
 )
 
 
