@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url('https://fonts.googleapis.com/css?family=Overpass:700,800,900');
 
 h1 {
     text-align: center;
@@ -20,4 +20,9 @@ h1 {
 .nav-tabs .nav-link {
     border: none;
     border-radius: 10px;
+}
+
+.jumbotron {
+    padding: 10rem 2rem;
+    font-family: "Overpass", serif;
 }
