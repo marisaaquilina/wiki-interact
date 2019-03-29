@@ -141,64 +141,66 @@ date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 #artist = streams_df[streams_df.Date == date_str].nlargest(columns=["Streams"], n=1).Artist.values[0]
+
+
+
+
 tab1_content = (
-    dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.H2("User Behavior"),
-                        html.P("On today's date last year, " + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
-                        html.P(user_beh_content)
-                    ],
-                    md=12,
-                )
-            ]
-        ),
+    dbc.Container([
         dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.H3('Weekend to Weekday Stream Ratios'),
-                        html.P(ratios_content),
-                        html.P(streams_df.Streams[0:3].tolist())
-                    ],
-                    md=12,
-                )
-            ]
-        ),
-        dcc.Graph(
-            figure={
-                'data':stream_ratio_data
-            }
-        ),
-        dcc.Graph(
-            figure={
-                'data':low_stream_ratio_data
-            }
-        ),
-        dcc.Graph(
-            id='flyingdog',
-            config={
-                "displaylogo": False,
-                'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
-            },
-            figure=stock_fig
-        )
+                [
+                    dbc.Col(
+                        [
+                            html.H2("User Behavior"),
+                            html.P("On today's date last year, " + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
+                            html.P(user_beh_content)
+                        ],
+                        md=12,
+                    )
+                ]
+            ),
+            dbc.Row(
+                [
+                    dbc.Col(
+                        [
+                            html.H3('Weekend to Weekday Stream Ratios'),
+                            html.P(ratios_content),
+                            html.P(streams_df.Streams[0:3].tolist())
+                        ],
+                        md=12,
+                    )
+                ]
+            ),
+            dcc.Graph(
+                figure={
+                    'data':stream_ratio_data
+                }
+            ),
+            dcc.Graph(
+                figure={
+                    'data':low_stream_ratio_data
+                }
+            ),
+            dcc.Graph(
+                id='flyingdog',
+                config={
+                    "displaylogo": False,
+                    'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
+                },
+                figure=stock_fig
+            )
+   ]
+)
 )
 
 tab2_content = (
     html.H2("Our Favorite Artists")
 )
 
-tab3_content = (
-    html.H2("Song Patterns")
-)
-
 tabs = dbc.Tabs(
     [
         dbc.Tab(tab1_content, label="User Behavior"),
-        dbc.Tab(tab2_content, label="Our Fave Artists"),
-        dbc.Tab(tab3_content, label="Song Patterns"),
+        dbc.Tab(tab2_content, label="Our Fave Artists")
     ]
 )
 
