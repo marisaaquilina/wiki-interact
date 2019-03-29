@@ -147,7 +147,7 @@ tab1_content = (
                 dbc.Col(
                     [
                         html.H2("User Behavior"),
-                        html.P("On today's date last year, " + "March 28" + ' ' +  str(date_obj.day) + ', you would most likely be listening to ' + artist + '.'),
+                        html.P('On today\'s date last year you would most likely be listening to ' + artist + '.'),
                         html.P(user_beh_content)
                     ],
                     md=12,
