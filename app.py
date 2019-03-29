@@ -137,7 +137,7 @@ jumbotron = dbc.Jumbotron(
 stock_fig = go.Figure(data=data, layout=layout)
 
 date_obj = datetime.datetime.today()
-date_str = "-".join([date_obj.day, date_obj.month, date_obj.year])
+date_str = "-".join([str(date_obj.day), str(date_obj.month), str(date_obj.year)])
 
 tab1_content = (
     dbc.Row(
