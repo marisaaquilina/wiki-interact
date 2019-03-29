@@ -138,15 +138,16 @@ jumbotron = dbc.Jumbotron(
 stock_fig = go.Figure(data=data, layout=layout)
 
 date_obj = datetime.datetime.today()
-date_str = "-".join([str(date_obj.day), str(date_obj.month), str(date_obj.year)])
-
+date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
+months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+artist = streams_df[streams_df.Date == date_str].nlargest(columns=["Streams"], n=1).Artist.values[0]
 tab1_content = (
     dbc.Row(
             [
                 dbc.Col(
                     [
                         html.H2("User Behavior"),
-                        html.P("Today last year" + date_str),
+                        html.P("On today's date last year, " + months[date_obj.month - 1] + ' ' +  str(date_obj.day) + ', you would most likely be listening to ' + artist + '.'),
                         html.P(user_beh_content)
                     ],
                     md=12,
