@@ -138,40 +138,8 @@ stock_fig = go.Figure(data=data, layout=layout)
 
 tab1_content = (
     html.H2("User Behavior"),
-    html.P(datetime.datetime.today())
-)
-
-tab2_content = (
-    html.H2("Our Favorite Artists")
-)
-
-tab3_content = (
-    html.H2("Song Patterns")
-)
-
-tabs = dbc.Tabs(
-    [
-        dbc.Tab(tab1_content, label="User Behavior"),
-        dbc.Tab(tab2_content, label="Our Fave Artists"),
-        dbc.Tab(tab3_content, label="Song Patterns"),
-    ]
-)
-
-body = dbc.Container(
-    [
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        html.H2("Introduction"),
-                        html.P(intro_content),
-                        tabs
-                    ],
-                    md=12,
-                )
-            ]
-        ),
-        dbc.Row(
+    html.P(datetime.datetime.today()),
+    dbc.Row(
             [
                 dbc.Col(
                     [
@@ -211,6 +179,38 @@ body = dbc.Container(
                 'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
             },
             figure=stock_fig
+        )
+)
+
+tab2_content = (
+    html.H2("Our Favorite Artists")
+)
+
+tab3_content = (
+    html.H2("Song Patterns")
+)
+
+tabs = dbc.Tabs(
+    [
+        dbc.Tab(tab1_content, label="User Behavior"),
+        dbc.Tab(tab2_content, label="Our Fave Artists"),
+        dbc.Tab(tab3_content, label="Song Patterns"),
+    ]
+)
+
+body = dbc.Container(
+    [
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        html.H2("Introduction"),
+                        html.P(intro_content),
+                        tabs
+                    ],
+                    md=12,
+                )
+            ]
         )
     ],
     className="mt-4",
