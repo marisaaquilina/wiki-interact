@@ -127,7 +127,7 @@ navbar = dbc.NavbarSimple(
 
 jumbotron = dbc.Jumbotron(
     [
-        html.H1("Spotify", className="display-3"),
+        html.H1("Spotify Through the Ears", className="display-3"),
         html.P(
             "An exploration of the styles of songs and behaviors of listeners on Spotify"
         )
