@@ -17,14 +17,23 @@ h1, h2 {
 }
 
 .nav-tabs .nav-link {
-    border: 2px solid rgba(134,201,81, 0.2);
-    border-radius: 2px;
+    border: none;
 }
 
 .nav-item {
     font-family: 'Overpass', serif;
     color: #000;
     font-size: 1.5rem;
+}
+
+.nav-tabs > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
+
+.nav-tabs {
+    text-align:center;
 }
 
 .jumbotron {
