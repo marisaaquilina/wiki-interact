@@ -131,7 +131,8 @@ jumbotron = dbc.Jumbotron(
         html.P(
             "An exploration of the styles of songs and behaviors of listeners on Spotify"
         )
-    ]
+    ],
+    className = 'my-div',
 )
 
 stock_fig = go.Figure(data=data, layout=layout)
@@ -145,7 +146,7 @@ tab1_content = (
                 dbc.Col(
                     [
                         html.H2("User Behavior"),
-                        html.P("Today last year", date_str),
+                        html.P("Today last year" + date_str),
                         html.P(user_beh_content)
                     ],
                     md=12,
@@ -218,7 +219,13 @@ body = dbc.Container(
     className="mt-4",
 )
 
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, external_stylesheets=[(
+    dbc.themes.BOOTSTRAP,
+    'https://raw.githubusercontent.com/robin-dela/hover-effect/master/example/js/TweenMax.min.js',
+    'https://raw.githubusercontent.com/robin-dela/hover-effect/master/example/js/three.min.js',
+    'https://raw.githubusercontent.com/robin-dela/hover-effect/master/dist/hover-effect.umd.js'
+)])
+
 server = app.server
 
 app.layout = html.Div(
