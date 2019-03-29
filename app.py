@@ -129,10 +129,10 @@ jumbotron = dbc.Jumbotron(
     [
         html.H1("Spotify Through the Ears", className="display-3"),
         html.P(
-            "An exploration of the styles of songs and behaviors of listeners on Spotify"
+            "An exploration of bops, beats, bangers, and the listeners who play them"
         )
     ],
-    className = 'my-div',
+    className = 'my-div text-center',
 )
 
 stock_fig = go.Figure(data=data, layout=layout)

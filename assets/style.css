@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:700,800,900');
 
-h1 {
+h1, h2 {
     text-align: center;
+    font-family: "Overpass";
 }
 
 .modebar {
@@ -25,4 +26,6 @@ h1 {
 .jumbotron {
     padding: 10rem 2rem;
     font-family: "Overpass", serif;
+    background: rgb(29,185,84);
+    background: linear-gradient(180deg, rgba(29,185,84,1) 0%, rgba(134,201,81,1) 24%, rgba(255,255,255,1) 100%);
 }
