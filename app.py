@@ -136,14 +136,16 @@ jumbotron = dbc.Jumbotron(
 
 stock_fig = go.Figure(data=data, layout=layout)
 
+date_obj = datetime.datetime.today().day
+date_str = "-".join([date_obj.day, date_obj.month, date_obj.year])
+
 tab1_content = (
-    html.H2("User Behavior"),
-    html.P(datetime.datetime.today()),
     dbc.Row(
             [
                 dbc.Col(
                     [
                         html.H2("User Behavior"),
+                        html.P("Today last year", date_str),
                         html.P(user_beh_content)
                     ],
                     md=12,
