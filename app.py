@@ -4,6 +4,7 @@ import dash_html_components as html
 import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
 import pandas as pd
+import datetime
 
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
@@ -136,7 +137,8 @@ jumbotron = dbc.Jumbotron(
 stock_fig = go.Figure(data=data, layout=layout)
 
 tab1_content = (
-    html.H2("User Behavior")
+    html.H2("User Behavior"),
+    html.P(datetime.datetime.today())
 )
 
 tab2_content = (
