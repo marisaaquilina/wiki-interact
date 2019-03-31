@@ -209,7 +209,7 @@ server = app.server
 app.layout = html.Div(
     children=[
         jumbotron,
-        html.Video(src="https://i.gifer.com/3edZ.mp4"),
+        html.Video(src="https://i.gifer.com/3edZ.mp4", autoPlay="True"),
         body
     ]
 )
