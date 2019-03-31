@@ -105,26 +105,6 @@ layout = go.Layout(
         range = ['2017-01-01','2017-12-31'])
 )
 
-
-navbar = dbc.NavbarSimple(
-    children=[
-        dbc.DropdownMenu(
-            nav=True,
-            in_navbar=True,
-            label="Menu",
-            children=[
-                dbc.DropdownMenuItem("Entry 1"),
-                dbc.DropdownMenuItem("Entry 2"),
-                dbc.DropdownMenuItem(divider=True),
-                dbc.DropdownMenuItem("Entry 3"),
-            ],
-        ),
-    ],
-    brand="SPEC",
-    brand_href="#",
-    sticky="top",
-)
-
 jumbotron = dbc.Jumbotron(
     [
         html.H1("Spotify Through the Ears", className="display-3"),
@@ -228,8 +208,8 @@ server = app.server
 
 app.layout = html.Div(
     children=[
-        navbar,
         jumbotron,
+        html.Video(src="https://i.gifer.com/3edZ.mp4"),
         body
     ]
 )

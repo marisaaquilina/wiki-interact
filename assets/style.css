@@ -38,7 +38,7 @@ h1, h2 {
 }
 
 .jumbotron {
-    padding: 14rem 2rem;
+    padding: 12rem 2rem;
     font-family: "Overpass", serif;
     background: rgb(29,185,84);
     background: linear-gradient(180deg, rgba(29,185,84,1) 0%, rgba(134,201,81,1) 24%, rgba(255,255,255,1) 100%);
