@@ -123,8 +123,6 @@ months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", 
 #artist = streams_df[streams_df.Date == date_str].nlargest(columns=["Streams"], n=1).Artist.values[0]
 
 
-
-
 tab1_content = (
     dbc.Container([
         dbc.Row(
@@ -133,7 +131,13 @@ tab1_content = (
                         [
                             html.H2("User Behavior"),
                             html.P("On today's date last year, " + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
-                            html.P(user_beh_content)
+                            html.P(user_beh_content),
+                            dcc.Dropdown(
+                                options=[
+                                    {'label': 'Travis Scott', 'value': 'Travis Scott'}
+                                ],
+                                placeholder="Select an artist"
+                            )
                         ],
                         md=12,
                     )
@@ -209,7 +213,7 @@ server = app.server
 app.layout = html.Div(
     children=[
         jumbotron,
-        html.Video(src="https://i.gifer.com/3edZ.mp4", autoPlay="True"),
+        #html.Video(src="https://streamable.com/s/t5tf2/tklool", autoPlay="True", loop="True", width="100vw"),
         body
     ]
 )
