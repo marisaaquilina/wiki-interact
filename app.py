@@ -9,6 +9,7 @@ import datetime
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_df = pd.read_csv('top.csv')
+options_list = [{'label':artist,'value':artist} for artist in top_df.Artist.unique()]
 
 len = ratios_df.ratio.size
 low_ratios_vals = ratios_df.ratio[len-5:len].tolist()
