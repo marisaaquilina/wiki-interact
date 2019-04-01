@@ -134,10 +134,14 @@ tab1_content = (
                             html.H2("User Behavior"),
                             html.P("On today's date last year, " + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
                             html.P(user_beh_content),
-                            dcc.Dropdown(
+                            html.Div([
+                                dcc.Dropdown(
+                                id='my-dropdown',
                                 options=options_list,
                                 placeholder="Select an artist"
-                            )
+                                ),
+                                html.Div(id='output-container')
+                            ])
                         ],
                         md=12,
                     )
@@ -217,6 +221,12 @@ app.layout = html.Div(
         body
     ]
 )
+
+@app.callback(
+    dash.dependencies.Output('output-container', 'children'),
+    [dash.dependencies.Input('my-dropdown', 'value')])
+def update_output(value):
+    return 'You have selected "{}"'.format(value)
 
 if __name__ == '__main__':
     app.run_server()
