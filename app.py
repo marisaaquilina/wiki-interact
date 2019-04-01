@@ -135,9 +135,7 @@ tab1_content = (
                             html.P("On today's date last year, " + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
                             html.P(user_beh_content),
                             dcc.Dropdown(
-                                options=[
-                                    {'label': 'Travis Scott', 'value': 'Travis Scott'}
-                                ],
+                                options=options_list,
                                 placeholder="Select an artist"
                             )
                         ],
