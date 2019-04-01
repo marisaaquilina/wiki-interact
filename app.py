@@ -5,6 +5,7 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
 import pandas as pd
 import datetime
+from dash.dependencies import Input, Output
 
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
