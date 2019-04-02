@@ -118,48 +118,46 @@ top_layout = go.Layout(
 
 layout = {
     'xaxis': {
-        'range': [0, 7]
+        'range': ['2017-01-01','2019-06-01']
     },
     'yaxis': {
         'range': [0, 2.5]
     },
     'shapes': [
-        # Line Vertical
+        # Line Vertical Death
         {
             'type': 'line',
-            'x0': 1,
+            'x0': "2017-11-15",
             'y0': 0,
-            'x1': 1,
+            'x1': "2017-11-15",
             'y1': 2,
             'line': {
                 'color': 'rgb(55, 128, 191)',
                 'width': 3,
             },
         },
-        # Line Horizontal
+        # Line Vertical Falling Down
         {
             'type': 'line',
-            'x0': 2,
-            'y0': 2,
-            'x1': 5,
+            'x0': "18-11-09",
+            'y0': 0,
+            'x1': "18-11-09",
             'y1': 2,
             'line': {
-                'color': 'rgb(50, 171, 96)',
-                'width': 4,
-                'dash': 'dashdot',
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
             },
         },
-        # Line Diagonal
+        # Line Vertical Album
         {
             'type': 'line',
-            'x0': 4,
+            'x0': "18-09-19",
             'y0': 0,
-            'x1': 6,
+            'x1': "18-09-19",
             'y1': 2,
             'line': {
-                'color': 'rgb(128, 0, 128)',
-                'width': 4,
-                'dash': 'dot',
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
             },
         },
     ]
