@@ -177,7 +177,7 @@ jumbotron = dbc.Jumbotron(
 
 stock_fig = go.Figure(data=top_data, layout=top_layout)
 
-#fig = go.Figure(data = data, layout = layout)
+peep_fig = go.Figure(data = data, layout = layout)
 date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -241,16 +241,10 @@ tab1_content = (
 )
 
 tab2_content = (
-    html.H2("Our Favorite Artists")
-    #dcc.Graph(
-    #    id='flyingdog',
-    #    config={
-    #        "displaylogo": False,
-    #        'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
-    #    },
-    #    figure=fig
-    #)
-
+    html.H2("Our Favorite Artists"),
+    dcc.Graph(
+        figure= stock_fig
+    )
 )
 
 tabs = dbc.Tabs(
