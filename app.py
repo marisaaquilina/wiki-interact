@@ -5,7 +5,7 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
 import pandas as pd
 import datetime
-from dash.dependencies import Input, Output
+#from dash.dependencies import Input, Output
 
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
@@ -218,16 +218,16 @@ server = app.server
 app.layout = html.Div(
     children=[
         jumbotron,
-        #html.Video(src="https://streamable.com/s/t5tf2/tklool", autoPlay="True", loop="True", width="100vw"),
         body
     ]
 )
 
-@app.callback(
-    dash.dependencies.Output('output-container', 'children'),
-    [dash.dependencies.Input('my-dropdown', 'value')])
-def update_output(value):
-    return 'You have selected "{}"'.format(value)
+#@app.callback(
+#    dash.dependencies.Output('output-container', 'children'),
+#    [dash.dependencies.Input('my-dropdown', 'value')])
+
+#def update_output(value):
+#    return 'You have selected "{}"'.format(value)
 
 if __name__ == '__main__':
-    app.run_server()
+    app.run_server(debug=True)
