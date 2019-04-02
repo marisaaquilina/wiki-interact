@@ -63,6 +63,12 @@ chainsmokers = go.Scatter(
                 line = dict(color = '#3E3E3E'),
                 opacity = 0.8)
 
+trace0 = go.Scatter(
+    x=[2, 3.5, 6],
+    y=[1, 1.5, 1],
+    text=['Vertical Line', 'Horizontal Dashed Line', 'Diagonal dotted Line'],
+    mode='text',
+)
 
 stream_ratio = go.Bar(
     x=ratios_df.ratio[0:5].tolist(),
@@ -95,17 +101,38 @@ low_stream_ratio = go.Bar(
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
-data = [ozuna,sheeran,chainsmokers,malone,drake]
+top_data = [ozuna,sheeran,chainsmokers,malone,drake]
+data = [trace0]
 
 beer_layout = go.Layout(
     barmode='group',
     title = 'Beer Comparison'
 )
 
-layout = go.Layout(
+top_layout = go.Layout(
     title = "Streams per Day of Top 5 Artists",
     xaxis = dict(
-        range = ['2017-01-01','2017-12-31'])
+        range = ['2017-01-01','2017-12-31']
+    )
+)
+
+layout = go.Layout(
+    xaxis = dict(
+        range = [0,7]
+    ),
+    yaxis = dict(
+        range = [0,2.5]
+    ),
+    shapes = [{
+            'type': 'line',
+            'x0': 1,
+            'y0': 0,
+            'x1': 1,
+            'y1': 2,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            }}]
 )
 
 jumbotron = dbc.Jumbotron(
@@ -118,8 +145,9 @@ jumbotron = dbc.Jumbotron(
     className = 'my-div text-center',
 )
 
-stock_fig = go.Figure(data=data, layout=layout)
+stock_fig = go.Figure(data=top_data, layout=top_layout)
 
+fig = go.Figure(data = data, layout = layout)
 date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -183,7 +211,16 @@ tab1_content = (
 )
 
 tab2_content = (
-    html.H2("Our Favorite Artists")
+    html.H2("Our Favorite Artists"),
+    dcc.Graph(
+        id='flyingdog',
+        config={
+            "displaylogo": False,
+            'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
+        },
+        figure=fig
+    )
+
 )
 
 tabs = dbc.Tabs(
