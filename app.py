@@ -64,8 +64,8 @@ chainsmokers = go.Scatter(
                 opacity = 0.8)
 
 trace0 = go.Scatter(
-    x=[2, 5.5, 8],
-    y=[1, 1, 1],
+    x=["2017-11-15", "18-11-09", "18-09-19"],
+    y=[0.5, 0.5, 0.5],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
 )
