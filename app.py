@@ -243,7 +243,7 @@ tab1_content = (
 tab2_content = (
     html.H2("Our Favorite Artists"),
     dcc.Graph(
-        figure= stock_fig
+        figure= peep_fig
     )
 )
 
