@@ -64,9 +64,9 @@ chainsmokers = go.Scatter(
                 opacity = 0.8)
 
 trace0 = go.Scatter(
-    x=[2, 3.5, 6],
-    y=[1, 1.5, 1],
-    text=['Vertical Line', 'Horizontal Dashed Line', 'Diagonal dotted Line'],
+    x=[2, 5.5, 8],
+    y=[1, 1, 1],
+    text=['Death', 'Falling Down', 'Album'],
     mode='text',
 )
 
@@ -116,24 +116,54 @@ top_layout = go.Layout(
     )
 )
 
-#layout = go.Layout(
-#    xaxis = dict(
-#        range = [0,7]
-#    ),
-#    yaxis = dict(
-#        range = [0,2.5]
-#    ),
-#    shapes = [{
-#            'type': 'line',
-#            'x0': 1,
-#            'y0': 0,
-#            'x1': 1,
-#            'y1': 2,
-#            'line': {
-#                'color': 'rgb(55, 128, 191)',
-#                'width': 3,
-#            }}]
-#)
+layout = {
+    'xaxis': {
+        'range': [0, 7]
+    },
+    'yaxis': {
+        'range': [0, 2.5]
+    },
+    'shapes': [
+        # Line Vertical
+        {
+            'type': 'line',
+            'x0': 1,
+            'y0': 0,
+            'x1': 1,
+            'y1': 2,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+        # Line Horizontal
+        {
+            'type': 'line',
+            'x0': 2,
+            'y0': 2,
+            'x1': 5,
+            'y1': 2,
+            'line': {
+                'color': 'rgb(50, 171, 96)',
+                'width': 4,
+                'dash': 'dashdot',
+            },
+        },
+        # Line Diagonal
+        {
+            'type': 'line',
+            'x0': 4,
+            'y0': 0,
+            'x1': 6,
+            'y1': 2,
+            'line': {
+                'color': 'rgb(128, 0, 128)',
+                'width': 4,
+                'dash': 'dot',
+            },
+        },
+    ]
+}
 
 jumbotron = dbc.Jumbotron(
     [
