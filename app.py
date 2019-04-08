@@ -70,6 +70,11 @@ lil_peep = go.Scatter(
                 y=lil_peep_df["mean_streams"]
 )
 
+lil_peep_pos = go.Scatter(
+                x=lil_peep_df["date"],
+                y=lil_peep_df["max_position"]
+)
+
 trace0 = go.Scatter(
     x=["2017-11-15", "18-11-09", "18-09-19"],
     y=[0.5, 0.5, 0.5],
@@ -110,6 +115,7 @@ stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
 top_data = [ozuna,sheeran,chainsmokers,malone,drake]
 lil_peep_data = [lil_peep, trace0]
+lil_peep_pos_data = [lil_peep_pos, trace0]
 
 beer_layout = go.Layout(
     barmode='group',
@@ -125,7 +131,7 @@ top_layout = go.Layout(
 
 lil_peep_layout = {
     'xaxis': {
-        'range': ['2017-01-01','2019-06-01']
+        'range': ['2017-10-01','2019-06-01']
     },
     'yaxis': {
         'range': [0, 2500000]
@@ -137,7 +143,7 @@ lil_peep_layout = {
             'x0': "2017-11-15",
             'y0': 0,
             'x1': "2017-11-15",
-            'y1': 2,
+            'y1': 2500000,
             'line': {
                 'color': 'rgb(55, 128, 191)',
                 'width': 3,
@@ -149,7 +155,7 @@ lil_peep_layout = {
             'x0': "18-11-09",
             'y0': 0,
             'x1': "18-11-09",
-            'y1': 2,
+            'y1': 2500000,
             'line': {
                 'color': 'rgb(55, 128, 191)',
                 'width': 3,
@@ -161,7 +167,7 @@ lil_peep_layout = {
             'x0': "18-09-19",
             'y0': 0,
             'x1': "18-09-19",
-            'y1': 2,
+            'y1': 2500000,
             'line': {
                 'color': 'rgb(55, 128, 191)',
                 'width': 3,
@@ -183,6 +189,7 @@ jumbotron = dbc.Jumbotron(
 stock_fig = go.Figure(data=top_data, layout=top_layout)
 
 peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
+peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_layout)
 date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -249,6 +256,9 @@ tab2_content = (
     html.H2("Our Favorite Artists"),
     dcc.Graph(
         figure= peep_fig
+    ),
+    dcc.Graph(
+        figure= peep_pos_fig
     )
 )
 
