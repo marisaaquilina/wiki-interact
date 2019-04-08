@@ -128,7 +128,7 @@ lil_peep_layout = {
         'range': ['2017-01-01','2019-06-01']
     },
     'yaxis': {
-        'range': [0, 2500]
+        'range': [0, 2500000]
     },
     'shapes': [
         # Line Vertical Death
