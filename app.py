@@ -317,6 +317,7 @@ stock_fig = go.Figure(data=top_data, layout=top_layout)
 peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
 peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_pos_layout)
 x_streams_fig = go.Figure(data=x_streams_data, layout=x_streams_layout)
+x_pos_fig = go.Figure(data=x_pos_data, layout=x_streams_layout)
 date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -389,6 +390,9 @@ tab2_content = (
     ),
     dcc.Graph(
         figure= x_streams_fig
+    ),
+    dcc.Graph(
+        figure=x_streams_fig
     )
 )
 
