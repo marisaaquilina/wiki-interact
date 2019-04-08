@@ -109,7 +109,7 @@ low_stream_ratio = go.Bar(
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
 top_data = [ozuna,sheeran,chainsmokers,malone,drake]
-data = [trace0, lil_peep]
+lil_peep_data = [lil_peep, trace0]
 
 beer_layout = go.Layout(
     barmode='group',
@@ -123,12 +123,12 @@ top_layout = go.Layout(
     )
 )
 
-layout = {
+lil_peep_layout = {
     'xaxis': {
         'range': ['2017-01-01','2019-06-01']
     },
     'yaxis': {
-        'range': [0, 2.5]
+        'range': [0, 2500]
     },
     'shapes': [
         # Line Vertical Death
@@ -182,7 +182,7 @@ jumbotron = dbc.Jumbotron(
 
 stock_fig = go.Figure(data=top_data, layout=top_layout)
 
-peep_fig = go.Figure(data = data, layout = layout)
+peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
 date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
