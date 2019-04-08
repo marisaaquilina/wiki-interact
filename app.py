@@ -11,6 +11,7 @@ ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_df = pd.read_csv('top.csv')
 lil_peep_df = pd.read_csv('lil_peep.csv')
+x_df = pd.read_csv('x.csv')
 options_list = [{'label':artist,'value':artist} for artist in top_df.Artist.unique()]
 
 
@@ -75,10 +76,27 @@ lil_peep_pos = go.Scatter(
                 y=lil_peep_df["max_position"]
 )
 
+x_streams = go.Scatter(
+                x=x_df["date"],
+                y=x_df["mean_streams"]
+)
+
+x_pos = go.Scatter(
+                x=x_df["date"],
+                y=x_df["max_position"]
+)
+
 trace0 = go.Scatter(
     x=["2017-11-15", "18-11-09", "18-09-19"],
     y=[0.5, 0.5, 0.5],
     text=['Death', 'Falling Down', 'Album'],
+    mode='text',
+)
+
+trace_x = go.Scatter(
+    x=["17-08-25", "18-03-16", "18-06-18", "18-12-07"],
+    y=[0.5, 0.5, 0.5, 0.5],
+    text=['17 drops', '? drops', 'XXXTentacion passes', 'Skins drops posthumously'],
     mode='text',
 )
 
@@ -116,6 +134,8 @@ low_stream_ratio_data = [low_stream_ratio]
 top_data = [ozuna,sheeran,chainsmokers,malone,drake]
 lil_peep_data = [lil_peep, trace0]
 lil_peep_pos_data = [lil_peep_pos, trace0]
+x_streams_data = [x_streams, trace_x]
+x_pos_data = [x_pos, trace_x]
 
 beer_layout = go.Layout(
     barmode='group',
@@ -176,6 +196,112 @@ lil_peep_layout = {
     ]
 }
 
+lil_peep_pos_layout = {
+    'xaxis': {
+        'range': ['2017-10-01','2019-06-01']
+    },
+    'yaxis': {
+        'range': [0, 250]
+    },
+    'shapes': [
+        # Line Vertical Death
+        {
+            'type': 'line',
+            'x0': "2017-11-15",
+            'y0': 0,
+            'x1': "2017-11-15",
+            'y1': 250,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+        # Line Vertical Falling Down
+        {
+            'type': 'line',
+            'x0': "18-11-09",
+            'y0': 0,
+            'x1': "18-11-09",
+            'y1': 250,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+        # Line Vertical Album
+        {
+            'type': 'line',
+            'x0': "18-09-19",
+            'y0': 0,
+            'x1': "18-09-19",
+            'y1': 250,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+    ]
+}
+
+x_streams_layout = {
+    'xaxis': {
+        'range': ['2017-01-01','2019-06-01']
+    },
+    'yaxis': {
+        'range': [0, 2500000]
+    },
+    'shapes': [
+        # Line Vertical Death
+        {
+            'type': 'line',
+            'x0': "18-06-18",
+            'y0': 0,
+            'x1': "18-06-18",
+            'y1': 1100000,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+        # Line Vertical ?
+        {
+            'type': 'line',
+            'x0': "18-03-16",
+            'y0': 0,
+            'x1': "18-03-16",
+            'y1': 1100000,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+        # Line Vertical Skins
+        {
+            'type': 'line',
+            'x0': "18-12-7",
+            'y0': 0,
+            'x1': "18-12-7",
+            'y1': 1100000,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+        # Line Vertical 17
+        {
+            'type': 'line',
+            'x0': "17-08-25",
+            'y0': 0,
+            'x1': "17-08-25",
+            'y1': 1100000,
+            'line': {
+                'color': 'rgb(55, 128, 191)',
+                'width': 3,
+            },
+        },
+    ]
+}
+
 jumbotron = dbc.Jumbotron(
     [
         html.H1("Spotify Through the Ears", className="display-3"),
@@ -189,7 +315,8 @@ jumbotron = dbc.Jumbotron(
 stock_fig = go.Figure(data=top_data, layout=top_layout)
 
 peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
-peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_layout)
+peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_pos_layout)
+x_streams_fig = go.Figure(data=x_streams_data, layout=x_streams_layout)
 date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -259,6 +386,9 @@ tab2_content = (
     ),
     dcc.Graph(
         figure= peep_pos_fig
+    ),
+    dcc.Graph(
+        figure= x_streams_fig
     )
 )
 
