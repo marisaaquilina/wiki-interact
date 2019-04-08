@@ -10,7 +10,9 @@ import datetime
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_df = pd.read_csv('top.csv')
+lil_peep_df = pd.read_csv('lil_peep.csv')
 options_list = [{'label':artist,'value':artist} for artist in top_df.Artist.unique()]
+
 
 len = ratios_df.ratio.size
 low_ratios_vals = ratios_df.ratio[len-5:len].tolist()
@@ -63,6 +65,11 @@ chainsmokers = go.Scatter(
                 line = dict(color = '#3E3E3E'),
                 opacity = 0.8)
 
+lil_peep = go.Scatter(
+                x=lil_peep_df["date"],
+                y=lil_peep_df["mean_streams"]
+)
+
 trace0 = go.Scatter(
     x=["2017-11-15", "18-11-09", "18-09-19"],
     y=[0.5, 0.5, 0.5],
@@ -102,7 +109,7 @@ low_stream_ratio = go.Bar(
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
 top_data = [ozuna,sheeran,chainsmokers,malone,drake]
-data = [trace0]
+data = [trace0, lil_peep]
 
 beer_layout = go.Layout(
     barmode='group',
