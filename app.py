@@ -5,6 +5,7 @@ import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
 import pandas as pd
 import datetime
+from plotly import tools
 #from dash.dependencies import Input, Output
 
 ratios_df = pd.read_csv('ratios.csv').dropna()
@@ -12,6 +13,7 @@ streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_df = pd.read_csv('top.csv')
 lil_peep_df = pd.read_csv('lil_peep.csv')
 x_df = pd.read_csv('x.csv')
+f_df = pd.read_csv('mean_features.csv')
 options_list = [{'label':artist,'value':artist} for artist in top_df.Artist.unique()]
 
 
@@ -128,6 +130,66 @@ low_stream_ratio = go.Bar(
         ),
     )
 )
+
+trace_acou = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_acousticness
+)
+
+trace_danc = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_danceability
+)
+
+trace_ener = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_energy
+)
+
+trace_instr = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_instrumentalness
+)
+
+trace_live = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_liveness
+)
+
+trace_loud = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_loudness
+)
+
+trace_spee = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_speechiness
+)
+
+trace_vale = go.Scatter(
+    x=f_df.weekday,
+    y=f_df.mean_valence
+)
+
+fig = tools.make_subplots(rows=4, cols=2, subplot_titles=(
+    'Acousticness','Danceability', 'Energy',
+    'Instrumentalness', 'Liveness', 'Loudness',
+    'Speechiness', 'Valence'
+), print_grid=False)
+
+fig.append_trace(trace_ener, 1, 1)
+fig.append_trace(trace_loud, 1, 2)
+
+fig.append_trace(trace_acou, 2, 1)
+fig.append_trace(trace_danc, 2, 2)
+
+fig.append_trace(trace_spee, 3, 1)
+fig.append_trace(trace_instr, 3, 2)
+
+fig.append_trace(trace_live, 4, 1)
+fig.append_trace(trace_vale, 4, 2)
+
+fig['layout'].update(height=1200, width=800)
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
@@ -375,7 +437,10 @@ tab1_content = (
                     'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
                 },
                 figure=stock_fig
-            )
+            ),
+            dcc.Graph(
+                    figure=fig
+                )
    ]
 )
 )
