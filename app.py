@@ -209,6 +209,9 @@ top_layout = go.Layout(
     title = "Streams per Day of Top 5 Artists",
     xaxis = dict(
         range = ['2017-01-01','2017-12-31']
+    ),
+    yaxis = dict(
+        range = [0,50000000]
     )
 )
 
