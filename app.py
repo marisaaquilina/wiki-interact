@@ -42,29 +42,29 @@ ozuna = go.Scatter(
                 opacity = 0.8)
 
 sheeran = go.Scatter(
-                x=streams_df[streams_df.Artist == "Ed Sheeran"].Date,
-                y=streams_df[streams_df.Artist == "Ed Sheeran"].Streams,
+                x=top_streams_df[top_streams_df.artist == "Ed Sheeran"].date,
+                y=top_streams_df[top_streams_df.artist == "Ed Sheeran"].total_streams,
                 name = "Ed Sheeran",
                 line = dict(color = '#3F94AB'),
                 opacity = 0.8)
 
 malone = go.Scatter(
-                x=streams_df[streams_df.Artist == "Post Malone"].Date,
-                y=streams_df[streams_df.Artist == "Post Malone"].Streams,
+                x=top_streams_df[top_streams_df.artist == "Post Malone"].date,
+                y=top_streams_df[top_streams_df.artist == "Post Malone"].total_streams,
                 name = "Post Malone",
                 line = dict(color = '#6285B2'),
                 opacity = 0.8)
 
 drake = go.Scatter(
-                x=streams_df[streams_df.Artist == "Drake"].Date,
-                y=streams_df[streams_df.Artist == "Drake"].Streams,
+                x=top_streams_df[top_streams_df.artist == "Drake"].date,
+                y=top_streams_df[top_streams_df.artist == "Drake"].total_streams,
                 name = "Drake",
                 line = dict(color = '#4B4782'),
                 opacity = 0.8)
 
 chainsmokers = go.Scatter(
-                x=streams_df[streams_df.Artist == "The Chainsmokers"].Date,
-                y=streams_df[streams_df.Artist == "The Chainsmokers"].Streams,
+                x=top_streams_df[top_streams_df.artist == "The Chainsmokers"].date,
+                y=top_streams_df[top_streams_df.artist == "The Chainsmokers"].total_streams,
                 name = "The Chainsmokers",
                 line = dict(color = '#3E3E3E'),
                 opacity = 0.8)
