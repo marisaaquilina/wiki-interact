@@ -10,6 +10,7 @@ from plotly import tools
 
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
+top_streams_df = pd.read_csv('top_streams.csv')
 top_df = pd.read_csv('top.csv')
 lil_peep_df = pd.read_csv('lil_peep.csv')
 x_df = pd.read_csv('x.csv')
@@ -34,8 +35,8 @@ user_beh_content = (
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
 ozuna = go.Scatter(
-                x=streams_df[streams_df.Artist == "Ozuna"].Date,
-                y=streams_df[streams_df.Artist == "Ozuna"].Streams,
+                x=top_streams_df[top_streams_df.artist == "Ozuna"].date,
+                y=top_streams_df[top_streams_df.artist == "Ozuna"].total_streams,
                 name = "Ozuna",
                 line = dict(color = '#90DAB5'),
                 opacity = 0.8)
