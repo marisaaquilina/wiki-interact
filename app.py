@@ -134,42 +134,74 @@ low_stream_ratio = go.Bar(
 
 trace_acou = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_acousticness
+    y=f_df.mean_acousticness,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 trace_danc = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_danceability
+    y=f_df.mean_danceability,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 trace_ener = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_energy
+    y=f_df.mean_energy,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 trace_instr = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_instrumentalness
+    y=f_df.mean_instrumentalness,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 trace_live = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_liveness
+    y=f_df.mean_liveness,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 trace_loud = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_loudness
+    y=f_df.mean_loudness,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 trace_spee = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_speechiness
+    y=f_df.mean_speechiness,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 trace_vale = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_valence
+    y=f_df.mean_valence,
+    showlegend = False,
+    marker=dict(
+        color='rgba(0,0,0,0.6)'
+    )
 )
 
 fig = tools.make_subplots(rows=4, cols=2, subplot_titles=(
@@ -190,7 +222,7 @@ fig.append_trace(trace_instr, 3, 2)
 fig.append_trace(trace_live, 4, 1)
 fig.append_trace(trace_vale, 4, 2)
 
-fig['layout'].update(height=1200, width=800)
+fig['layout'].update(height=1200, width=900)
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
@@ -211,7 +243,7 @@ top_layout = go.Layout(
         range = ['2017-01-01','2017-12-31']
     ),
     yaxis = dict(
-        range = [0,50000000]
+        range = [0,40000000]
     )
 )
 
