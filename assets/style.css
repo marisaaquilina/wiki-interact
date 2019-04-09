@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass:700,800,900');
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-30px);}
+  60% {transform: translateY(-15px);}
+}
+
 h1, h2 {
     font-family: "Overpass", serif;
 }
@@ -54,4 +60,6 @@ h1, h2 {
     text-align: center;
     top: 50%;
     width: 100%;
+    animation-name: bounce;
+
 }
