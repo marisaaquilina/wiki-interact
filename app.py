@@ -62,22 +62,26 @@ chainsmokers = go.Scatter(
 
 lil_peep = go.Scatter(
                 x=lil_peep_df["date"],
-                y=lil_peep_df["mean_streams"]
+                y=lil_peep_df["mean_streams"],
+                showlegend = False
 )
 
 lil_peep_pos = go.Scatter(
                 x=lil_peep_df["date"],
-                y=lil_peep_df["max_position"]
+                y=lil_peep_df["max_position"],
+                showlegend = False
 )
 
 x_streams = go.Scatter(
                 x=x_df["date"],
-                y=x_df["mean_streams"]
+                y=x_df["mean_streams"],
+                showlegend = False
 )
 
 x_pos = go.Scatter(
                 x=x_df["date"],
-                y=x_df["max_position"]
+                y=x_df["max_position"],
+                showlegend = False
 )
 
 trace0 = go.Scatter(
@@ -85,6 +89,7 @@ trace0 = go.Scatter(
     y=[0.5, 0.5, 0.5],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
+    showlegend = False,
 )
 
 trace_x = go.Scatter(
@@ -92,6 +97,7 @@ trace_x = go.Scatter(
     y=[0.5, 0.5, 0.5, 0.5],
     text=['17 drops', '? drops', 'XXXTentacion passes', 'Skins drops posthumously'],
     mode='text',
+    showlegend = False,
 )
 
 stream_ratio = go.Bar(
@@ -254,7 +260,7 @@ lil_peep_layout = {
             'x1': "2017-11-15",
             'y1': 2500000,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -266,7 +272,7 @@ lil_peep_layout = {
             'x1': "18-11-09",
             'y1': 2500000,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -278,7 +284,7 @@ lil_peep_layout = {
             'x1': "18-09-19",
             'y1': 2500000,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -301,7 +307,7 @@ lil_peep_pos_layout = {
             'x1': "2017-11-15",
             'y1': 250,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -313,7 +319,7 @@ lil_peep_pos_layout = {
             'x1': "18-11-09",
             'y1': 250,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -325,7 +331,7 @@ lil_peep_pos_layout = {
             'x1': "18-09-19",
             'y1': 250,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -348,7 +354,7 @@ x_streams_layout = {
             'x1': "18-06-18",
             'y1': 1100000,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -360,7 +366,7 @@ x_streams_layout = {
             'x1': "18-03-16",
             'y1': 1100000,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -372,7 +378,7 @@ x_streams_layout = {
             'x1': "18-12-7",
             'y1': 1100000,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
@@ -384,7 +390,7 @@ x_streams_layout = {
             'x1': "17-08-25",
             'y1': 1100000,
             'line': {
-                'color': 'rgb(55, 128, 191)',
+                'color': 'rgb(29,185,84)',
                 'width': 3,
             },
         },
