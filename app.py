@@ -85,26 +85,28 @@ x_pos = go.Scatter(
 )
 
 trace0 = go.Scatter(
-    x=["2017-11-15", "18-11-09", "18-09-19"],
+    x=["2017-11-15", "18-12-09", "18-09-19"],
     y=[2300000, 2300000, 2300000],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
     showlegend = False,
     textfont=dict(
         size=18,
-        color='rgb(29,185,84)'
+        color='rgb(29,185,84)',
+        family='Overpass'
     )
 )
 
 trace1 = go.Scatter(
-    x=["2017-11-15", "18-11-09", "18-09-19"],
+    x=["2017-11-15", "18-12-09", "18-09-19"],
     y=[225, 225, 225],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
     showlegend = False,
     textfont=dict(
         size=18,
-        color='rgb(29,185,84)'
+        color='rgb(29,185,84)',
+        family='Overpass'
     )
 )
 
@@ -274,10 +276,10 @@ lil_peep_layout = {
             'x0': "2017-11-15",
             'y0': 0,
             'x1': "2017-11-15",
-            'y1': 2500000,
+            'y1': 200000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 2,
             },
         },
         # Line Vertical Falling Down
@@ -286,10 +288,10 @@ lil_peep_layout = {
             'x0': "18-11-09",
             'y0': 0,
             'x1': "18-11-09",
-            'y1': 2500000,
+            'y1': 2000000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 2,
             },
         },
         # Line Vertical Album
@@ -298,10 +300,10 @@ lil_peep_layout = {
             'x0': "18-09-19",
             'y0': 0,
             'x1': "18-09-19",
-            'y1': 2500000,
+            'y1': 2000000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 2,
             },
         },
     ]
@@ -321,10 +323,10 @@ lil_peep_pos_layout = {
             'x0': "2017-11-15",
             'y0': 0,
             'x1': "2017-11-15",
-            'y1': 250,
+            'y1': 200,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 2,
             },
         },
         # Line Vertical Falling Down
@@ -333,10 +335,10 @@ lil_peep_pos_layout = {
             'x0': "18-11-09",
             'y0': 0,
             'x1': "18-11-09",
-            'y1': 250,
+            'y1': 200,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 2,
             },
         },
         # Line Vertical Album
@@ -345,10 +347,10 @@ lil_peep_pos_layout = {
             'x0': "18-09-19",
             'y0': 0,
             'x1': "18-09-19",
-            'y1': 250,
+            'y1': 200,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 2,
             },
         },
     ]
