@@ -87,7 +87,7 @@ x_pos = go.Scatter(
 trace0 = go.Scatter(
     x=["2017-11-15", "19-01-01", "18-09-19"],
     y=[2100000, 2100000, 2300000],
-    text=['Death', 'Falling Down', 'Album'],
+    text=['Death', 'Falling Down drops', 'COWYS Pt. 2 drops'],
     mode='text',
     showlegend = False,
     textfont=dict(
@@ -100,7 +100,7 @@ trace0 = go.Scatter(
 trace1 = go.Scatter(
     x=["2017-11-15", "19-01-01", "18-09-19"],
     y=[225, 210, 225],
-    text=['Death', 'Falling Down', 'Album'],
+    text=['Death', 'Falling Down drops', 'COWYS Pt. 2 drops'],
     mode='text',
     showlegend = False,
     textfont=dict(
@@ -111,9 +111,9 @@ trace1 = go.Scatter(
 )
 
 trace_x = go.Scatter(
-    x=["17-08-25", "18-03-16", "18-06-18", "18-12-07"],
+    x=["17-08-25", "18-01-16", "18-06-18", "18-12-07"],
     y=[1300000, 1300000, 1300000, 1300000],
-    text=['17 drops', '? drops', 'XXXTentacion passes', 'Skins drops posthumously'],
+    text=['17 drops', '? drops', 'X passes', 'Skins drops'],
     mode='text',
     showlegend = False,
     textfont=dict(
@@ -126,7 +126,7 @@ trace_x = go.Scatter(
 trace_x_pos = go.Scatter(
     x=["17-08-25", "18-03-16", "18-06-18", "18-12-07"],
     y=[0.5, 0.5, 0.5, 0.5],
-    text=['17 drops', '? drops', 'XXXTentacion passes', 'Skins drops posthumously'],
+    text=['17 drops', '? drops', 'X Passes', 'Skins drops posthumously'],
     mode='text',
     showlegend = False,
     textfont=dict(
@@ -437,6 +437,65 @@ x_streams_layout = {
     ]
 }
 
+x_pos_layout = {
+    'xaxis': {
+        'range': ['2017-01-01','2019-06-01']
+    },
+    'yaxis': {
+        'range': [0, 1500000]
+    },
+    'shapes': [
+        # Line Vertical Death
+        {
+            'type': 'line',
+            'x0': "18-06-18",
+            'y0': 0,
+            'x1': "18-06-18",
+            'y1': 1200000,
+            'line': {
+                'color': 'rgb(29,185,84)',
+                'width': 1,
+            },
+        },
+        # Line Vertical ?
+        {
+            'type': 'line',
+            'x0': "18-03-16",
+            'y0': 0,
+            'x1': "18-03-16",
+            'y1': 1200000,
+            'line': {
+                'color': 'rgb(29,185,84)',
+                'width': 1,
+            },
+        },
+        # Line Vertical Skins
+        {
+            'type': 'line',
+            'x0': "18-12-7",
+            'y0': 0,
+            'x1': "18-12-7",
+            'y1': 1200000,
+            'line': {
+                'color': 'rgb(29,185,84)',
+                'width': 1,
+            },
+        },
+        # Line Vertical 17
+        {
+            'type': 'line',
+            'x0': "17-08-25",
+            'y0': 0,
+            'x1': "17-08-25",
+            'y1': 1200000,
+            'line': {
+                'color': 'rgb(29,185,84)',
+                'width': 1,
+            },
+        },
+    ]
+}
+
 jumbotron = dbc.Jumbotron(
     [
         html.H1("Spotify Through the Ears", className="display-3"),
@@ -452,7 +511,7 @@ top_ratio_fig = go.Figure(data=stream_ratio_data, layout=top_ratio_layout)
 peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
 peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_pos_layout)
 x_streams_fig = go.Figure(data=x_streams_data, layout=x_streams_layout)
-x_pos_fig = go.Figure(data=x_pos_data, layout=x_streams_layout)
+x_pos_fig = go.Figure(data=x_pos_data, layout=x_pos_layout)
 date_obj = datetime.datetime.today()
 month_str = ("0" + str(date_obj.month))[-2:]
 day_str = ("0" + str(date_obj.day))[-2:]
