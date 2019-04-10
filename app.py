@@ -130,8 +130,7 @@ stream_ratio = go.Bar(
             color='rgba(8,48,107,0.7)',
             width=1
         ),
-    ),
-    title = "Highest Weekend to Weekday Streams Ratio",
+    )
 )
 low_stream_ratio = go.Bar(
     x=low_ratios_vals,
@@ -145,8 +144,7 @@ low_stream_ratio = go.Bar(
             color='rgba(8,48,107,0.7)',
             width=1
         ),
-    ),
-    title = "Lowest Weekend to Weekday Streams Ratio",
+    )
 )
 
 trace_acou = go.Scatter(
@@ -262,6 +260,10 @@ top_layout = go.Layout(
     yaxis = dict(
         range = [0,40000000]
     )
+)
+
+top_ratio_layout = go.Layout(
+    title = "Artists with Highest Weekday to Weekend Stream Ratios",
 )
 
 lil_peep_layout = {
@@ -428,7 +430,7 @@ jumbotron = dbc.Jumbotron(
 )
 
 stock_fig = go.Figure(data=top_data, layout=top_layout)
-
+top_ratio_fig = go.Figure(data=stream_ratio_data, layout=top_ratio_layout)
 peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
 peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_pos_layout)
 x_streams_fig = go.Figure(data=x_streams_data, layout=x_streams_layout)
