@@ -414,7 +414,7 @@ peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_pos_layout)
 x_streams_fig = go.Figure(data=x_streams_data, layout=x_streams_layout)
 x_pos_fig = go.Figure(data=x_pos_data, layout=x_streams_layout)
 date_obj = datetime.datetime.today()
-month_str = str(date_obj.month) if len(str(date_obj.month)) == 2 else ("0" + str(date_obj.month))
+#month_str = str(date_obj.month) if len(str(date_obj.month)) == 2 else ("0" + str(date_obj.month))
 #day_str = str(date_obj.day) if len(str(date_obj.day)) == 2 else "0" + str(date_obj.day)
 #date_str = "-".join(["2017", month_str, day_str])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
