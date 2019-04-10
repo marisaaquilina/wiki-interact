@@ -85,8 +85,8 @@ x_pos = go.Scatter(
 )
 
 trace0 = go.Scatter(
-    x=["2017-11-15", "18-12-09", "18-09-19"],
-    y=[2300000, 2300000, 2300000],
+    x=["2017-11-15", "19-04-09", "18-09-19"],
+    y=[2100000, 2100000, 2300000],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
     showlegend = False,
@@ -98,8 +98,8 @@ trace0 = go.Scatter(
 )
 
 trace1 = go.Scatter(
-    x=["2017-11-15", "18-12-09", "18-09-19"],
-    y=[225, 225, 225],
+    x=["2017-11-15", "19-04-09", "18-09-19"],
+    y=[225, 210, 225],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
     showlegend = False,
@@ -330,7 +330,7 @@ lil_peep_pos_layout = {
             'y1': 200,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 2,
+                'width': 1,
             },
         },
         # Line Vertical Falling Down
@@ -342,7 +342,7 @@ lil_peep_pos_layout = {
             'y1': 200,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 2,
+                'width': 1,
             },
         },
         # Line Vertical Album
@@ -354,7 +354,7 @@ lil_peep_pos_layout = {
             'y1': 200,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 2,
+                'width': 1,
             },
         },
     ]
@@ -377,7 +377,7 @@ x_streams_layout = {
             'y1': 1100000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 1,
             },
         },
         # Line Vertical ?
@@ -389,7 +389,7 @@ x_streams_layout = {
             'y1': 1100000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 1,
             },
         },
         # Line Vertical Skins
@@ -401,7 +401,7 @@ x_streams_layout = {
             'y1': 1100000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 1,
             },
         },
         # Line Vertical 17
@@ -413,7 +413,7 @@ x_streams_layout = {
             'y1': 1100000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 3,
+                'width': 1,
             },
         },
     ]
