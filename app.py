@@ -135,7 +135,7 @@ trace_acou = go.Scatter(
 
 trace_danc = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_danceability,
+    y=f_df.mean_loudness,
     showlegend = False,
     marker=dict(
         color='rgb(29,185,84)'
@@ -153,7 +153,7 @@ trace_ener = go.Scatter(
 
 trace_instr = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_loudness,
+    y=f_df.mean_instrumentalness,
     showlegend = False,
     marker=dict(
         color='rgb(29,185,84)'
@@ -171,7 +171,7 @@ trace_live = go.Scatter(
 
 trace_loud = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_instrumentalness,
+    y=f_df.mean_danceability,
     showlegend = False,
     marker=dict(
         color='rgb(29,185,84)'
