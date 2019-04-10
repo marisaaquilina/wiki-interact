@@ -27,6 +27,10 @@ body {
     border: none;
 }
 
+.btn {
+    margin:5px;
+}
+
 .nav-item {
     font-family: 'Overpass', serif;
     color: #000;
