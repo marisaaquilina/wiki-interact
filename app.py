@@ -11,6 +11,7 @@ prose_df = pd.read_json("prose.json").T
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_streams_df = pd.read_csv('top_streams.csv')
+spec_ratios_df = pd.read_csv('spec_ratios.csv')
 top_df = pd.read_csv('top.csv')
 lil_peep_df = pd.read_csv('lil_peep.csv')
 x_df = pd.read_csv('x.csv')
@@ -150,9 +151,9 @@ stream_ratio = go.Bar(
     )
 )
 low_stream_ratio = go.Bar(
-    x=low_ratios_vals,
-    y=low_ratios_labels,
-    text=[str(i)[0:3] + ' times more weekday streams' for i in low_ratios_vals],
+    x=spec_ratios_df.ratio.tolist(),
+    y=spec_ratios_df.Artist.tolist(),
+    text=[str(i)[1:3] + ' times more weekday streams' for i in spec_ratios_df.ratio.tolist()],
     textposition='auto',
     orientation='h',
     marker=dict(
@@ -284,7 +285,7 @@ top_ratio_layout = go.Layout(
 )
 
 low_ratio_layout = go.Layout(
-    title= "Artists with Lowest Weekday to Weekend Stream Ratios",
+    title= "Selected Artists' Weekday to Weekend Stream Ratios",
 )
 
 lil_peep_layout = {
