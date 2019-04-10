@@ -471,9 +471,7 @@ tab1_content = (
                             html.P(prose_df.loc["week_ratios", "prose_1"]),
                             html.P(prose_df.loc["week_ratios", "prose_2"]),
                             dcc.Graph(
-                                 figure={
-                                        'data':stream_ratio_data
-                                }
+                                 figure=top_ratio_fig
                             ),
                             html.P(prose_df.loc["week_ratios", "prose_3"]),
                             dcc.Graph(
@@ -504,13 +502,14 @@ tab1_content = (
 )
 
 tab2_content = (
-    html.P(prose_df.loc["lil_peep", "title"]),
+    html.H2(prose_df.loc["lil_peep", "title"]),
     dcc.Graph(
         figure= peep_fig
     ),
     dcc.Graph(
         figure= peep_pos_fig
     ),
+    html.H2(prose_df.loc["x", "title"]),
     dcc.Graph(
         figure= x_streams_fig
     ),
