@@ -18,12 +18,12 @@ body {
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    border: 2px solid rgba(134,201,81, 0.4);
+    background-color: rgba(134,201,81, 0.2);
     color: #000;
 }
 
 .nav-tabs .nav-link {
-    border: none;
+    border: 2px solid rgba(134,201,81, 0.4);
 }
 
 .nav-item {
