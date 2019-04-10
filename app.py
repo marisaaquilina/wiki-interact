@@ -91,7 +91,7 @@ trace0 = go.Scatter(
     mode='text',
     showlegend = False,
     textfont=dict(
-        size=18,
+        size=14,
         color='rgb(29,185,84)',
         family='Overpass'
     )
@@ -104,7 +104,7 @@ trace1 = go.Scatter(
     mode='text',
     showlegend = False,
     textfont=dict(
-        size=18,
+        size=14,
         color='rgb(29,185,84)',
         family='Overpass'
     )
@@ -116,6 +116,24 @@ trace_x = go.Scatter(
     text=['17 drops', '? drops', 'XXXTentacion passes', 'Skins drops posthumously'],
     mode='text',
     showlegend = False,
+    textfont=dict(
+        size=14,
+        color='rgb(29,185,84)',
+        family='Overpass'
+    )
+)
+
+trace_x_pos = go.Scatter(
+    x=["17-08-25", "18-03-16", "18-06-18", "18-12-07"],
+    y=[0.5, 0.5, 0.5, 0.5],
+    text=['17 drops', '? drops', 'XXXTentacion passes', 'Skins drops posthumously'],
+    mode='text',
+    showlegend = False,
+    textfont=dict(
+        size=14,
+        color='rgb(29,185,84)',
+        family='Overpass'
+    )
 )
 
 stream_ratio = go.Bar(
@@ -245,7 +263,7 @@ top_data = [ozuna,sheeran,chainsmokers,malone,drake]
 lil_peep_data = [lil_peep, trace0]
 lil_peep_pos_data = [lil_peep_pos, trace1]
 x_streams_data = [x_streams, trace_x]
-x_pos_data = [x_pos, trace_x]
+x_pos_data = [x_pos, trace_x_pos]
 
 beer_layout = go.Layout(
     barmode='group',
@@ -280,10 +298,10 @@ lil_peep_layout = {
             'x0': "2017-11-15",
             'y0': 0,
             'x1': "2017-11-15",
-            'y1': 200000,
+            'y1': 2000000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 2,
+                'width': 1,
             },
         },
         # Line Vertical Falling Down
@@ -295,7 +313,7 @@ lil_peep_layout = {
             'y1': 2000000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 2,
+                'width': 1,
             },
         },
         # Line Vertical Album
@@ -307,7 +325,7 @@ lil_peep_layout = {
             'y1': 2000000,
             'line': {
                 'color': 'rgb(29,185,84)',
-                'width': 2,
+                'width': 1,
             },
         },
     ]
