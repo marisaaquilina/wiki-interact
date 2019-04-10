@@ -381,6 +381,7 @@ lil_peep_pos_layout = {
 }
 
 x_streams_layout = {
+    'title' : "Streams on Spotify Charts over Time",
     'xaxis': {
         'range': ['2017-01-01','2019-06-01']
     },
@@ -440,6 +441,7 @@ x_streams_layout = {
 }
 
 x_pos_layout = {
+    'title' : "Position on Spotify Charts over Time",
     'xaxis': {
         'range': ['2017-01-01','2019-06-01']
     },
