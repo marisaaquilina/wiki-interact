@@ -556,6 +556,66 @@ app.layout = html.Div(
             dbc.Button(
                 ["Kids At Play- EP", dbc.Badge("Louis The Child", color="light", className="ml-1")],
                 color="primary",
+            ),
+            dbc.Button(
+                ["Attack & Release", dbc.Badge("The Black Keys", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Rodeo", dbc.Badge("Travis Scott", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Swimming", dbc.Badge("Mac Miller", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Blonde", dbc.Badge("Frank Ocean", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Scorpion", dbc.Badge("Drake", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["The Sun's Tirade", dbc.Badge("Isaiah Rashad", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["My Beautiful Dark Twisted Fantasy", dbc.Badge("Kanye West", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Stoney", dbc.Badge("Post Malone", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Blue Album", dbc.Badge("Weezer", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Melodrama", dbc.Badge("Lorde", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Camp", dbc.Badge("Childish Gambino", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Nation of Two", dbc.Badge("Vance Joy", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["Section 80", dbc.Badge("Kendrick Lamar", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["The Dark Side of the Moon", dbc.Badge("Pink Floyd", color="light", className="ml-1")],
+                color="primary",
+            ),
+            dbc.Button(
+                ["In the Aeroplane Over the Sea", dbc.Badge("Neutral Milk Hotel", color="light", className="ml-1")],
+                color="primary",
             )
         ]
         ),
