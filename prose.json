@@ -12,11 +12,11 @@
       "title":"Artists with More Weekend Streams than Weekday Streams",
       "prose_1":"You might guess that some artists' styles are better-recieved on the weekends rather than weekdays. Maybe their styles tend to go better with events (or feelings!) that occur after the work week. To explore this, we found artists whose listeners tend to stream their music more on weekends than weekdays.",
       "prose_2":"Let's consider the most popular artists on Spotify's Top 200 chart. We compared each artist's average number of weekend streams to average number of weekday streams using a ratio. Larger ratios represent a greater difference in the average number of streams between weekends and weekdays.",
-      "prose_3":"For example, Post Malone's ratio (1.08) indicates that people tended to stream Post Malone 8% more on weekends than weekdays. The plot above shows the artists with the greatest weekend to weekday stream ratios.",
-      "prose_4": "On the other hand, the artists with smallest ratios indicate that listeners are more weekday listeners. Notice that these artists produced much older music, which suggests a different demographic of listeners."
+      "prose_3":"For example, Post Malone's ratio (1.08) indicates that people tended to stream Post Malone 8% more on weekends than weekdays. The plot below shows the artists with the greatest weekend to weekday stream ratios.",
+      "prose_4": "On the other hand, artists with the smallest ratios (below) indicate that listeners are more weekday listeners. Notice that these artists produced much older music, which suggests a different demographic of listeners."
    },
    "song_features":{
-      "prose_1":"Why did Drake and Ariana Grande have more streams on weekends than weekdays than other artists? We suspect that music with more party-like qualities are streamed more on weekends, so we looked to the trends of song characteristics throughout the week.",
+      "prose_1":"Why did Drake and Ariana Grande have more streams on weekends than weekdays than other artists? You might suspect that music with more party-like qualities are streamed more on weekends, so we looked to the trends of song characteristics throughout the week.",
       "prose_2":"We can see that songs played on the weekend tend to exhibit higher levels of party-like qualities including danceability, liveness, valence, speechiness, and loudness. The duration of songs also decreased quite a bit on Fridays and Saturdays, which could be because party-like songs tend to be shorter. The acoustic trend appears to be nearly directly inverse of the danceability trend throughout the week, suggesting that these characteristics tend to not co-occur."
    },
    "lil_peep": {

@@ -284,6 +284,10 @@ top_ratio_layout = go.Layout(
     title = "Artists with Highest Weekday to Weekend Stream Ratios",
 )
 
+low_ratio_layout = go.Layout(
+    title= "Artists with Lowest Weekday to Weekend Stream Ratios",
+)
+
 lil_peep_layout = {
     'title' : "Streams on Spotify Charts over Time",
     'xaxis': {
@@ -512,6 +516,7 @@ jumbotron = dbc.Jumbotron(
 
 stock_fig = go.Figure(data=top_data, layout=top_layout)
 top_ratio_fig = go.Figure(data=stream_ratio_data, layout=top_ratio_layout)
+low_ratio_fig = go.Figure(data=low_stream_ratio_data, layout=low_ratio_layout)
 peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
 peep_pos_fig = go.Figure(data = lil_peep_pos_data, layout = lil_peep_pos_layout)
 x_streams_fig = go.Figure(data=x_streams_data, layout=x_streams_layout)
@@ -557,9 +562,7 @@ tab1_content = (
                             ),
                             html.P(prose_df.loc["week_ratios", "prose_4"]),
                             dcc.Graph(
-                                figure={
-                                    'data':low_stream_ratio_data
-                                }
+                                figure=low_ratio_fig
                             ),
                             html.P(prose_df.loc["song_features", "prose_1"]),
                             dcc.Graph(
