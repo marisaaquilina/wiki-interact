@@ -285,6 +285,7 @@ top_ratio_layout = go.Layout(
 )
 
 lil_peep_layout = {
+    'title' : "Streams on Spotify Charts over Time",
     'xaxis': {
         'range': ['2017-08-01','2019-06-01']
     },
@@ -332,6 +333,7 @@ lil_peep_layout = {
 }
 
 lil_peep_pos_layout = {
+    'title' : "Position on Spotify Charts over Time",
     'xaxis': {
         'range': ['2017-10-01','2019-06-01']
     },
