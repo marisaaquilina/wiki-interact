@@ -197,22 +197,21 @@ trace_vale = go.Scatter(
 )
 
 fig = tools.make_subplots(rows=4, cols=2, subplot_titles=(
-    'Acousticness','Instrumentalness', 'Energy',
-    'Loudness', 'Liveness', 'Danceability',
-    'Speechiness', 'Valence'
+    'Energy', 'Loudness','Liveness', 'Danceability', 'Speechiness', 'Valence', 'Acousticness','Instrumentalness'
 ), print_grid=False)
 
-fig.append_trace(trace_ener, 1, 1)
-fig.append_trace(trace_loud, 1, 2)
+fig.append_trace(trace_acou, 1, 1)
+fig.append_trace(trace_danc, 1, 2)
 
-fig.append_trace(trace_acou, 2, 1)
-fig.append_trace(trace_danc, 2, 2)
+fig.append_trace(trace_spee, 2, 1)
+fig.append_trace(trace_instr, 2, 2)
 
-fig.append_trace(trace_spee, 3, 1)
-fig.append_trace(trace_instr, 3, 2)
+fig.append_trace(trace_live, 3, 1)
+fig.append_trace(trace_vale, 3, 2)
 
-fig.append_trace(trace_live, 4, 1)
-fig.append_trace(trace_vale, 4, 2)
+fig.append_trace(trace_ener, 4, 1)
+fig.append_trace(trace_loud, 4, 2)
+
 
 fig['layout'].update(height=1000)
 
