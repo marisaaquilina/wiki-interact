@@ -214,7 +214,7 @@ fig.append_trace(trace_instr, 3, 2)
 fig.append_trace(trace_live, 4, 1)
 fig.append_trace(trace_vale, 4, 2)
 
-fig['layout']
+fig['layout'].update(height=1000)
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
@@ -411,8 +411,6 @@ x_pos_fig = go.Figure(data=x_pos_data, layout=x_streams_layout)
 date_obj = datetime.datetime.today()
 date_str = "-".join([str(date_obj.year), str(date_obj.month), str(date_obj.day)])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-#artist = streams_df[streams_df.Date == date_str].nlargest(columns=["Streams"], n=1).Artist.values[0]
-
 
 tab1_content = (
     dbc.Container([
@@ -421,7 +419,7 @@ tab1_content = (
                     dbc.Col(
                         [
                             html.H2("User Behavior"),
-                            html.P(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
+                            html.P(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + " in 2017, you would most likely be listening to " + "Drake."),
                             html.Div([
                                 dcc.Dropdown(
                                 id='my-dropdown',
