@@ -482,7 +482,6 @@ tab1_content = (
 )
 
 tab2_content = (
-    html.H2("Our Favorite Artists"),
     dcc.Graph(
         figure= peep_fig
     ),
@@ -499,8 +498,8 @@ tab2_content = (
 
 tabs = dbc.Tabs(
     [
-        dbc.Tab(tab1_content, label="User Behavior"),
-        dbc.Tab(tab2_content, label="Our Fave Artists")
+        dbc.Tab(tab1_content, label="Streaming Behavior"),
+        dbc.Tab(tab2_content, label="Selected Artists")
     ]
 )
 
