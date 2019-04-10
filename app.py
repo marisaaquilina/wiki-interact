@@ -535,7 +535,7 @@ tab1_content = (
                         [
                             html.H2(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + " (today) in 2017, you would most likely be listening to " + today_artist + "."),
                             html.P(prose_df.loc["top_streams", "prose_1"]),
-                            html.P(prose_df.loc["top_streams", "prose_2"]),
+                            html.P(prose_df.loc["top_streams", "prose_2"], className="sidenote-text"),
                             dcc.Graph(
                                 id='flyingdog',
                                 config={
@@ -739,6 +739,7 @@ app.layout = html.Div(
             className='footer-text')
     ]
 )
+app.title = "Spotify Through the Ears"
 
 if __name__ == '__main__':
     app.run_server(debug=True)
