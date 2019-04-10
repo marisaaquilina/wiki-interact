@@ -498,7 +498,6 @@ tab2_content = (
 
 tabs = dbc.Tabs(
     [
-        html.P("Choose topic"),
         dbc.Tab(tab1_content, label="Streaming Behavior"),
         dbc.Tab(tab2_content, label="Selected Artists")
     ]
@@ -513,6 +512,10 @@ body = dbc.Container(
                         html.H2("Introduction"),
                         html.P(prose_df.loc["intro", "prose_1"]),
                         html.P(prose_df.loc["intro", "prose_2"]),
+                        html.Div(
+                            [html.P("Choose topic")],
+                            className="sidenote-text"
+                        ),
                         tabs
                     ],
                     md=12,

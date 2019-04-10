@@ -63,4 +63,10 @@ body {
 .footer-text {
     text-align: center;
     font-size: 14px;
+    padding: 2em;
+}
+
+.sidenote-text {
+    font-size: 14px;
+    text-align: center;
 }
