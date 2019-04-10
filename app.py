@@ -126,7 +126,7 @@ trace_x = go.Scatter(
 trace_x_pos = go.Scatter(
     x=["17-08-25", "18-03-16", "18-06-18", "18-12-07"],
     y=[235, 235, 235, 235],
-    text=['17 drops', '? drops', 'X Passes', 'Skins drops posthumously'],
+    text=['17 drops', '? drops', 'X Passes', 'Skins drops'],
     mode='text',
     showlegend = False,
     textfont=dict(
@@ -551,10 +551,11 @@ tab1_content = (
                             html.H2(prose_df.loc["week_ratios", "title"]),
                             html.P(prose_df.loc["week_ratios", "prose_1"]),
                             html.P(prose_df.loc["week_ratios", "prose_2"]),
+                            html.P(prose_df.loc["week_ratios", "prose_3"]),
                             dcc.Graph(
                                  figure=top_ratio_fig
                             ),
-                            html.P(prose_df.loc["week_ratios", "prose_3"]),
+                            html.P(prose_df.loc["week_ratios", "prose_4"]),
                             dcc.Graph(
                                 figure={
                                     'data':low_stream_ratio_data
@@ -620,8 +621,8 @@ body = dbc.Container(
                             className="sidenote-text"
                         ),
                         tabs,
-                        html.H2("Looking for an Album to Stream?"),
-                        html.P("Our team's favorites are"),
+                        html.H2("Looking for Something to Stream?"),
+                        html.P("Our team's favorite albums:"),
                         html.Div([
                             html.A(
                                 dbc.Button(

@@ -5,13 +5,13 @@
    },
    "top_streams":{
       "title":"On ",
-      "prose_1":"The most streamed artists in 2017 were Drake, Post Malone, Ed Sheeran, The Chainsmokers, and Ozuna—many of whom you may have guessed. Amongst Spotify listeners, we can see that the streaming popularity of these artists have peaks and lows throughout different times of the year.",
+      "prose_1":"The most streamed artists in 2017 were Drake, Post Malone, Ed Sheeran, The Chainsmokers, and Ozuna—many of whom you may have guessed. Among Spotify listeners, the streaming popularity of these artists have peaks and lows throughout different times of the year.",
       "prose_2":"Jump to 'Selected Artists' to explore why Lil Peep and XXXTentacion's streams varied by their personal life events."
    },
    "week_ratios":{
       "title":"Artists with More Weekend Streams than Weekday Streams",
       "prose_1":"You might guess that some artists' styles are better-recieved on the weekends rather than weekdays. Maybe their styles tend to go better with events (or feelings!) that occur after the work week. To explore this, we found artists whose listeners tend to stream their music more on weekends than weekdays.",
-      "prose_2":"Let's consider the most popular artists on Spotify's Top 200 chart. We compare each artist's average number of weekend streams to average number of weekday streams using a ratio. Larger ratios represent a greater difference in the average number of streams between weekends and weekdays.",
+      "prose_2":"Let's consider the most popular artists on Spotify's Top 200 chart. We compared each artist's average number of weekend streams to average number of weekday streams using a ratio. Larger ratios represent a greater difference in the average number of streams between weekends and weekdays.",
       "prose_3":"For example, Post Malone's ratio (1.08) indicates that people tended to stream Post Malone 8% more on weekends than weekdays. The plot above shows the artists with the greatest weekend to weekday stream ratios.",
       "prose_4": "On the other hand, the artists with smallest ratios indicate that listeners are more weekday listeners. Notice that these artists produced much older music, which suggests a different demographic of listeners."
    },
