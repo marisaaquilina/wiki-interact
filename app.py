@@ -263,7 +263,7 @@ top_data = [ozuna,sheeran,chainsmokers,malone,drake]
 lil_peep_data = [lil_peep, trace0]
 lil_peep_pos_data = [lil_peep_pos, trace1]
 x_streams_data = [x_streams, trace_x]
-x_pos_data = [x_pos, trace_x_pos]
+x_pos_data = [x_streams, trace_x_pos]
 
 beer_layout = go.Layout(
     barmode='group',
@@ -383,7 +383,7 @@ x_streams_layout = {
         'range': ['2017-01-01','2019-06-01']
     },
     'yaxis': {
-        'range': [0, 2500000]
+        'range': [0, 1500000]
     },
     'shapes': [
         # Line Vertical Death
@@ -392,7 +392,7 @@ x_streams_layout = {
             'x0': "18-06-18",
             'y0': 0,
             'x1': "18-06-18",
-            'y1': 1100000,
+            'y1': 1200000,
             'line': {
                 'color': 'rgb(29,185,84)',
                 'width': 1,
@@ -404,7 +404,7 @@ x_streams_layout = {
             'x0': "18-03-16",
             'y0': 0,
             'x1': "18-03-16",
-            'y1': 1100000,
+            'y1': 1200000,
             'line': {
                 'color': 'rgb(29,185,84)',
                 'width': 1,
@@ -416,7 +416,7 @@ x_streams_layout = {
             'x0': "18-12-7",
             'y0': 0,
             'x1': "18-12-7",
-            'y1': 1100000,
+            'y1': 1200000,
             'line': {
                 'color': 'rgb(29,185,84)',
                 'width': 1,
@@ -428,7 +428,7 @@ x_streams_layout = {
             'x0': "17-08-25",
             'y0': 0,
             'x1': "17-08-25",
-            'y1': 1100000,
+            'y1': 1200000,
             'line': {
                 'color': 'rgb(29,185,84)',
                 'width': 1,
