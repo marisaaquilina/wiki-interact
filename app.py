@@ -85,7 +85,7 @@ x_pos = go.Scatter(
 )
 
 trace0 = go.Scatter(
-    x=["2017-11-15", "19-04-09", "18-09-19"],
+    x=["2017-11-15", "19-01-01", "18-09-19"],
     y=[2100000, 2100000, 2300000],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
@@ -98,7 +98,7 @@ trace0 = go.Scatter(
 )
 
 trace1 = go.Scatter(
-    x=["2017-11-15", "19-04-09", "18-09-19"],
+    x=["2017-11-15", "19-01-01", "18-09-19"],
     y=[225, 210, 225],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
@@ -268,7 +268,7 @@ top_ratio_layout = go.Layout(
 
 lil_peep_layout = {
     'xaxis': {
-        'range': ['2017-10-01','2019-06-01']
+        'range': ['2017-08-01','2019-06-01']
     },
     'yaxis': {
         'range': [0, 2500000]
