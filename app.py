@@ -90,6 +90,10 @@ trace0 = go.Scatter(
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
     showlegend = False,
+    textfont=dict(
+        size=18,
+        color='rgb(29,185,84)'
+    )
 )
 
 trace1 = go.Scatter(
@@ -98,6 +102,10 @@ trace1 = go.Scatter(
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
     showlegend = False,
+    textfont=dict(
+        size=18,
+        color='rgb(29,185,84)'
+    )
 )
 
 trace_x = go.Scatter(
