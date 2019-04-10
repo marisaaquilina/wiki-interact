@@ -421,7 +421,7 @@ tab1_content = (
                     dbc.Col(
                         [
                             html.H2("User Behavior"),
-                            html.P(prose_df.loc["intro", "prose_1"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
+                            html.P(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
                             html.Div([
                                 dcc.Dropdown(
                                 id='my-dropdown',
@@ -429,46 +429,51 @@ tab1_content = (
                                 placeholder="Select an artist"
                                 ),
                                 html.Div(id='output-container')
-                            ])
+                            ]),
+                            html.P(prose_df.loc["top_streams", "prose_1"]),
+                            html.P(prose_df.loc["top_streams", "prose_2"]),
+                            dcc.Graph(
+                                id='flyingdog',
+                                config={
+                                    "displaylogo": False,
+                                    'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
+                                },
+                                figure=stock_fig
+                            ),
+                            html.P(prose_df.loc["week_ratios", "title"]),
+                            html.P(prose_df.loc["week_ratios", "prose_1"]),
+                            html.P(prose_df.loc["week_ratios", "prose_2"]),
+                            dcc.Graph(
+                                 figure={
+                                        'data':stream_ratio_data
+                                }
+                            ),
+                            html.P(prose_df.loc["week_ratios", "prose_3"]),
+                            dcc.Graph(
+                                figure={
+                                    'data':low_stream_ratio_data
+                                }
+                            ),
+                            html.P(prose_df.loc["song_features", "prose_1"]),
+                            dcc.Graph(
+                                figure=fig
+                            ),
+                            html.P(prose_df.loc["song_features", "prose_2"])
+                            #html.P(prose_df.loc["", ""]),
+                            #html.P(prose_df.loc["", ""]),
+                            #html.P(prose_df.loc["", ""]),
+                            #html.P(prose_df.loc["", ""]),
+                            #html.P(prose_df.loc["", ""]),
+                            #html.P(prose_df.loc["", ""]),
+                            #html.P(prose_df.loc["", ""]),
                         ],
                         md=12,
                     )
                 ]
-            ),
-            dbc.Row(
-                [
-                    dbc.Col(
-                        [
-                            html.H3('Weekend to Weekday Stream Ratios'),
-                            html.P(streams_df.Streams[0:3].tolist())
-                        ],
-                        md=12,
-                    )
-                ]
-            ),
-            dcc.Graph(
-                figure={
-                    'data':stream_ratio_data
-                }
-            ),
-            dcc.Graph(
-                figure={
-                    'data':low_stream_ratio_data
-                }
-            ),
-            dcc.Graph(
-                id='flyingdog',
-                config={
-                    "displaylogo": False,
-                    'modeBarButtonsToRemove': ['pan2d', 'lasso2d']
-                },
-                figure=stock_fig
-            ),
-            dcc.Graph(
-                    figure=fig
-                )
-   ]
-)
+            )
+
+        ]
+    )
 )
 
 tab2_content = (
