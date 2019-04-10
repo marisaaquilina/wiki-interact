@@ -8,6 +8,7 @@ import datetime
 from plotly import tools
 #from dash.dependencies import Input, Output
 
+prose_df = pd.read_json("prose.json").T
 ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_streams_df = pd.read_csv('top_streams.csv')
@@ -21,16 +22,6 @@ options_list = [{'label':artist,'value':artist} for artist in top_df.Artist.uniq
 len = ratios_df.ratio.size
 low_ratios_vals = ratios_df.ratio[len-5:len].tolist()
 low_ratios_labels = ratios_df.Artist[len-5:len].tolist()
-
-ratios_content = (
-    'We were interested in seeing which artist’s listeners tend to stream their music more on weekends than weekdays. We focused on the most popular artists on the Top 200 chart and calculated the ratio of average streams on the weekends to the average streams on weekdays. This means that the larger numbers in this graph represent a higher difference in average number of streams on the weekends than weekdays. For example, people tended to stream Post Malone 8% more on weekends than weekdays.'
-)
-intro_content = (
-    'As a group of ambitious statistics and computer science students first stepping foot into the world of data analysis and visualization, it would be an understatement to describe us as a group of kids in a candy shop. With a fresh understanding of statistical analysis softwares in a world where datasets are as plentiful as tweets about Donald Trump, we are excited to present our findings from our little niche of Spotify data.'
-)
-user_beh_content = (
-    'Inspired by our own avid use of Spotify, we first wanted to delve into user behavior of Spotify, including streaming trends in response to significant events and day to day listening patterns.'
-)
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
@@ -139,6 +130,7 @@ trace_acou = go.Scatter(
     marker=dict(
         color='rgba(0,0,0,0.6)'
     )
+    #hoverinfo
 )
 
 trace_danc = go.Scatter(
@@ -429,8 +421,7 @@ tab1_content = (
                     dbc.Col(
                         [
                             html.H2("User Behavior"),
-                            html.P("On today's date last year, " + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
-                            html.P(user_beh_content),
+                            html.P(prose_df.loc["intro", "prose_1"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + ", you woud most likely be listening to " + "Drake."),
                             html.Div([
                                 dcc.Dropdown(
                                 id='my-dropdown',
@@ -449,7 +440,6 @@ tab1_content = (
                     dbc.Col(
                         [
                             html.H3('Weekend to Weekday Stream Ratios'),
-                            html.P(ratios_content),
                             html.P(streams_df.Streams[0:3].tolist())
                         ],
                         md=12,
@@ -511,7 +501,6 @@ body = dbc.Container(
                 dbc.Col(
                     [
                         html.H2("Introduction"),
-                        html.P(intro_content),
                         tabs
                     ],
                     md=12,
