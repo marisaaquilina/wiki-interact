@@ -3,10 +3,11 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
+from dash.dependencies import Output, Event
+from dash.dependencies import Input, Output
 import pandas as pd
 import datetime
 from plotly import tools
-#from dash.dependencies import Input, Output
 
 prose_df = pd.read_json("prose.json").T
 ratios_df = pd.read_csv('ratios.csv').dropna()
@@ -547,11 +548,11 @@ tab1_content = (
                             ),
                             html.Div([
                                 dcc.Dropdown(
-                                id='my-dropdown',
+                                id='input-component',
                                 options=options_list,
                                 placeholder="Select an artist"
                                 ),
-                                html.Div(id='output-container')
+                                html.Div(id='output-component')
                             ]),
                             html.H2(prose_df.loc["week_ratios", "title"]),
                             html.P(prose_df.loc["week_ratios", "prose_1"]),
@@ -734,6 +735,18 @@ server = app.server
 app.layout = html.Div(
     children=[
         jumbotron,
+        html.H1(children='''
+                Interactive Chart:
+            '''),
+            dcc.Dropdown(
+                id = "input",
+                options=[
+                    {'label': 'January', 'value': 1},
+                    {'label': 'Febuary', 'value': 2},
+                    {'label': 'March', 'value': 3}
+                ], value = 1
+            ),
+            dcc.Graph( id="output-graph"),
         body,
         html.Div(
             [html.P("Built by Spec with 💚 and data")],
@@ -741,12 +754,25 @@ app.layout = html.Div(
     ]
 )
 
-#@app.callback(
-#    dash.dependencies.Output('output-container', 'children'),
-#    [dash.dependencies.Input('my-dropdown', 'value')])
+@app.callback(
+    Output(component_id='output-graph', component_property='figure'),
+    [Input(component_id='input', component_property='value')])
+def update_value(value):
 
-#def update_output(value):
-#    return 'You have selected "{}"'.format(value)
+    start = datetime.datetime(2018, value, 1, 0, 0, 0, 1)
+    end = datetime.datetime(2018,  value + 1, 1, 0, 0, 0, 1)
+    subset_df = df[ (df["lost_time"] > start) & (df["lost_time"] < end) ]
+    x = pd.value_counts(subset_df.deal_source).index
+    y = pd.value_counts(subset_df.deal_source).values
+
+    return({'data': [
+                {'x': x, 'y': y, 'type': 'bar', 'name': value},
+            ],
+            'layout': {
+                'title': "Deal Flow source for {} 2018".format(months[value-1])
+            }
+        }
+    )
 
 if __name__ == '__main__':
     app.run_server(debug=True)
