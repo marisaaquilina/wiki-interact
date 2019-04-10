@@ -197,8 +197,8 @@ trace_vale = go.Scatter(
 )
 
 fig = tools.make_subplots(rows=4, cols=2, subplot_titles=(
-    'Acousticness','Danceability', 'Energy',
-    'Loudness', 'Liveness', 'Instrumentalness',
+    'Acousticness','Instrumentalness', 'Energy',
+    'Loudness', 'Liveness', 'Danceability',
     'Speechiness', 'Valence'
 ), print_grid=False)
 
