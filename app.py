@@ -426,8 +426,7 @@ tab1_content = (
                 [
                     dbc.Col(
                         [
-                            html.H2("User Behavior"),
-                            html.P(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + " in 2017, you would most likely be listening to " + today_artist),
+                            html.H3(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + " (today's date) in 2017, you would most likely be listening to " + today_artist + "."),
                             html.Div([
                                 dcc.Dropdown(
                                 id='my-dropdown',
