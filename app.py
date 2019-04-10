@@ -125,10 +125,10 @@ low_stream_ratio = go.Bar(
 
 trace_acou = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_acousticness,
+    y=f_df.mean_energy,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
     #hoverinfo
 )
@@ -138,16 +138,16 @@ trace_danc = go.Scatter(
     y=f_df.mean_danceability,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
 )
 
 trace_ener = go.Scatter(
     x=f_df.weekday,
-    y=f_df.mean_energy,
+    y=f_df.mean_acousticness,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
 )
 
@@ -156,7 +156,7 @@ trace_instr = go.Scatter(
     y=f_df.mean_instrumentalness,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
 )
 
@@ -165,7 +165,7 @@ trace_live = go.Scatter(
     y=f_df.mean_liveness,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
 )
 
@@ -174,7 +174,7 @@ trace_loud = go.Scatter(
     y=f_df.mean_loudness,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
 )
 
@@ -183,7 +183,7 @@ trace_spee = go.Scatter(
     y=f_df.mean_speechiness,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
 )
 
@@ -192,7 +192,7 @@ trace_vale = go.Scatter(
     y=f_df.mean_valence,
     showlegend = False,
     marker=dict(
-        color='rgba(0,0,0,0.6)'
+        color='rgb(29,185,84)'
     )
 )
 
@@ -214,7 +214,7 @@ fig.append_trace(trace_instr, 3, 2)
 fig.append_trace(trace_live, 4, 1)
 fig.append_trace(trace_vale, 4, 2)
 
-fig['layout'].update(height=1200, width=900)
+fig['layout']
 
 stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
