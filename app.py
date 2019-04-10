@@ -335,7 +335,7 @@ lil_peep_layout = {
 lil_peep_pos_layout = {
     'title' : "Position on Spotify Charts over Time",
     'xaxis': {
-        'range': ['2017-10-01','2019-06-01']
+        'range': ['2017-08-01','2019-06-01']
     },
     'yaxis': {
         'range': [0, 250]
@@ -593,7 +593,7 @@ tab2_content = (
         figure= x_streams_fig
     ),
     dcc.Graph(
-        figure=x_streams_fig
+        figure=x_pos_fig
     )
 )
 
