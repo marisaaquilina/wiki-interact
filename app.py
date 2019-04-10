@@ -535,6 +535,8 @@ body = dbc.Container(
                             className="sidenote-text"
                         ),
                         tabs,
+                        html.H2("Looking for an Album to Stream?"),
+                        html.P("Our team's favorites are"),
                         html.Div([
                             html.A(
                                 dbc.Button(
