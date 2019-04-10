@@ -498,6 +498,7 @@ tab2_content = (
 
 tabs = dbc.Tabs(
     [
+        html.P("Choose topic"),
         dbc.Tab(tab1_content, label="Streaming Behavior"),
         dbc.Tab(tab2_content, label="Selected Artists")
     ]
@@ -530,7 +531,9 @@ app.layout = html.Div(
     children=[
         jumbotron,
         body,
-        html.P("Built by Spec with 💚 and data")
+        html.Div(
+            [html.P("Built by Spec with 💚 and data")],
+            className='footer-text')
     ]
 )
 
