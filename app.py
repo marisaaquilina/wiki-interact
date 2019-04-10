@@ -418,7 +418,8 @@ month_str = ("0" + str(date_obj.month))[-2:]
 day_str = ("0" + str(date_obj.day))[-2:]
 date_str = "-".join(["2017", month_str, day_str])
 months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-
+i = top_streams_df[top_streams_df.date == date_str]["total_streams"].idxmax()
+today_artist = top_streams_df.loc[i, "artist"]
 tab1_content = (
     dbc.Container([
         dbc.Row(
@@ -426,8 +427,7 @@ tab1_content = (
                     dbc.Col(
                         [
                             html.H2("User Behavior"),
-                            html.P(date_str),
-                            html.P(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + " in 2017, you would most likely be listening to " + "Drake."),
+                            html.P(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + " in 2017, you would most likely be listening to " + today_artist),
                             html.Div([
                                 dcc.Dropdown(
                                 id='my-dropdown',
