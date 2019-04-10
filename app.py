@@ -130,7 +130,8 @@ stream_ratio = go.Bar(
             color='rgba(8,48,107,0.7)',
             width=1
         ),
-    )
+    ),
+    title = "Highest Weekend to Weekday Streams Ratio",
 )
 low_stream_ratio = go.Bar(
     x=low_ratios_vals,
@@ -144,7 +145,8 @@ low_stream_ratio = go.Bar(
             color='rgba(8,48,107,0.7)',
             width=1
         ),
-    )
+    ),
+    title = "Lowest Weekend to Weekday Streams Ratio",
 )
 
 trace_acou = go.Scatter(
@@ -500,6 +502,7 @@ tab1_content = (
 )
 
 tab2_content = (
+    html.P(prose_df.loc["lil_peep", "title"]),
     dcc.Graph(
         figure= peep_fig
     ),

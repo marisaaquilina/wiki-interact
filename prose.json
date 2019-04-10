@@ -5,7 +5,7 @@
    },
    "top_streams":{
       "title":"On ",
-      "prose_1":"The most streamed artists in 2017 were Drake, Post Malone, Ed Sheeran, The Chainsmokers, and Ozuna--many of whom you may have guessed. Amongst Spotify listeners, we can see that the streaming popularity of these artists have peaks and lows throughout different times of the year.",
+      "prose_1":"The most streamed artists in 2017 were Drake, Post Malone, Ed Sheeran, The Chainsmokers, and Ozuna—many of whom you may have guessed. Amongst Spotify listeners, we can see that the streaming popularity of these artists have peaks and lows throughout different times of the year.",
       "prose_2":"Jump to 'Selected Artists' to explore why Lil Peep and XXXTentacion's streams varied by their personal life events."
    },
    "week_ratios":{
@@ -19,10 +19,12 @@
       "prose_1":"Why did Drake and Ariana Grande have more streams on weekends than weekdays than other artists? We suspect that music with more party-like qualities are streamed more on weekends, so we looked to the trends of song characteristics throughout the week.",
       "prose_2":"We can see that songs played on the weekend tend to exhibit higher levels of party-like qualities including danceability, liveness, valence, speechiness, and loudness. The duration of songs also decreased quite a bit on Fridays and Saturdays, which could be because party-like songs tend to be shorter. The acoustic trend appears to be nearly directly inverse of the danceability trend throughout the week, suggesting that these characteristics tend to not co-occur."
    },
-   "lil_peep":{
+   "lil_peep": {
+      "title": "Lil Peep's Popularity Posthumously",
       "prose_1":"Lil Peep was a mostly underground artist before his death. After his death, many people started to listen to more of this music and he gained a lot of fame. Let's see if this is reflected on the Spotify top charts."
    },
    "x":{
+      "title": "XXXTentacion's Popularity by Album Drops",
       "prose_1":""
    }
 }
