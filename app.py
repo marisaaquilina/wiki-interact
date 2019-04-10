@@ -86,7 +86,15 @@ x_pos = go.Scatter(
 
 trace0 = go.Scatter(
     x=["2017-11-15", "18-11-09", "18-09-19"],
-    y=[0.5, 0.5, 0.5],
+    y=[2300000, 2300000, 2300000],
+    text=['Death', 'Falling Down', 'Album'],
+    mode='text',
+    showlegend = False,
+)
+
+trace1 = go.Scatter(
+    x=["2017-11-15", "18-11-09", "18-09-19"],
+    y=[225, 225, 225],
     text=['Death', 'Falling Down', 'Album'],
     mode='text',
     showlegend = False,
@@ -225,7 +233,7 @@ stream_ratio_data = [stream_ratio]
 low_stream_ratio_data = [low_stream_ratio]
 top_data = [ozuna,sheeran,chainsmokers,malone,drake]
 lil_peep_data = [lil_peep, trace0]
-lil_peep_pos_data = [lil_peep_pos, trace0]
+lil_peep_pos_data = [lil_peep_pos, trace1]
 x_streams_data = [x_streams, trace_x]
 x_pos_data = [x_pos, trace_x]
 
