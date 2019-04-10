@@ -3,7 +3,6 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 import plotly.graph_objs as go
-from dash.dependencies import Output, Event
 from dash.dependencies import Input, Output
 import pandas as pd
 import datetime
@@ -140,7 +139,7 @@ trace_x_pos = go.Scatter(
 stream_ratio = go.Bar(
     x=ratios_df.ratio[0:5].tolist(),
     y=ratios_df.Artist[0:5].tolist(),
-    text=[str(i)[0:3] + ' times more weekend streams' for i in ratios_df.ratio[0:5].tolist()],
+    text=[str(i)[1:3] + ' more weekend streams' for i in ratios_df.ratio[0:5].tolist()],
     textposition='auto',
     orientation='h',
     marker=dict(
@@ -735,18 +734,15 @@ server = app.server
 app.layout = html.Div(
     children=[
         jumbotron,
-        html.H1(children='''
-                Interactive Chart:
-            '''),
-            dcc.Dropdown(
-                id = "input",
-                options=[
+        dcc.Dropdown(
+            id = "input",
+            options=[
                     {'label': 'January', 'value': 1},
                     {'label': 'Febuary', 'value': 2},
                     {'label': 'March', 'value': 3}
-                ], value = 1
-            ),
-            dcc.Graph( id="output-graph"),
+            ], value = 1
+        ),
+        dcc.Graph( id="output-graph"),
         body,
         html.Div(
             [html.P("Built by Spec with 💚 and data")],
@@ -757,8 +753,8 @@ app.layout = html.Div(
 @app.callback(
     Output(component_id='output-graph', component_property='figure'),
     [Input(component_id='input', component_property='value')])
-def update_value(value):
 
+def update_value(value):
     start = datetime.datetime(2018, value, 1, 0, 0, 0, 1)
     end = datetime.datetime(2018,  value + 1, 1, 0, 0, 0, 1)
     subset_df = df[ (df["lost_time"] > start) & (df["lost_time"] < end) ]
