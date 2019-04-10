@@ -3,7 +3,7 @@
 h1, h2 {
     font-family: "Overpass", serif;
     padding-bottom: 25px;
-    padding-bottom: 40px;
+    padding-top: 40px;
 }
 
 body {
@@ -68,7 +68,7 @@ body {
 }
 
 .sidenote-text {
-    font-size: 14px;
+    font-size: 18px;
     text-align: center;
     padding-top: 2vh;
     font-family: "Overpass", serif;
