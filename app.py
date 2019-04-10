@@ -427,14 +427,6 @@ tab1_content = (
                     dbc.Col(
                         [
                             html.H2(prose_df.loc["top_streams", "title"] + str(months[date_obj.month - 1]) + " " + str(date_obj.day) + " (today) in 2017, you would most likely be listening to " + today_artist + "."),
-                            html.Div([
-                                dcc.Dropdown(
-                                id='my-dropdown',
-                                options=options_list,
-                                placeholder="Select an artist"
-                                ),
-                                html.Div(id='output-container')
-                            ]),
                             html.P(prose_df.loc["top_streams", "prose_1"]),
                             html.P(prose_df.loc["top_streams", "prose_2"]),
                             dcc.Graph(
@@ -445,6 +437,14 @@ tab1_content = (
                                 },
                                 figure=stock_fig
                             ),
+                            html.Div([
+                                dcc.Dropdown(
+                                id='my-dropdown',
+                                options=options_list,
+                                placeholder="Select an artist"
+                                ),
+                                html.Div(id='output-container')
+                            ]),
                             html.P(prose_df.loc["week_ratios", "title"]),
                             html.P(prose_df.loc["week_ratios", "prose_1"]),
                             html.P(prose_df.loc["week_ratios", "prose_2"]),
@@ -511,6 +511,8 @@ body = dbc.Container(
                 dbc.Col(
                     [
                         html.H2("Introduction"),
+                        html.P(prose_df.loc["intro", "prose_1"]),
+                        html.P(prose_df.loc["intro", "prose_2"]),
                         tabs
                     ],
                     md=12,

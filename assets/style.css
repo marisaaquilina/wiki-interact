@@ -2,6 +2,7 @@
 
 h1, h2 {
     font-family: "Overpass", serif;
+    padding-bottom: 25px;
 }
 
 .jumbotron p {
