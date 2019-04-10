@@ -112,7 +112,7 @@ trace1 = go.Scatter(
 
 trace_x = go.Scatter(
     x=["17-08-25", "18-03-16", "18-06-18", "18-12-07"],
-    y=[0.5, 0.5, 0.5, 0.5],
+    y=[1300000, 1300000, 1300000, 1300000],
     text=['17 drops', '? drops', 'XXXTentacion passes', 'Skins drops posthumously'],
     mode='text',
     showlegend = False,
@@ -263,7 +263,7 @@ top_data = [ozuna,sheeran,chainsmokers,malone,drake]
 lil_peep_data = [lil_peep, trace0]
 lil_peep_pos_data = [lil_peep_pos, trace1]
 x_streams_data = [x_streams, trace_x]
-x_pos_data = [x_streams, trace_x_pos]
+x_pos_data = [x_pos, trace_x_pos]
 
 beer_layout = go.Layout(
     barmode='group',
