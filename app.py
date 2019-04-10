@@ -529,8 +529,8 @@ server = app.server
 app.layout = html.Div(
     children=[
         jumbotron,
-        body,
-        html.P("Built by Spec with 👐 and data")
+        body
+        #html.P("Built by Spec with 👐 and data")
     ]
 )
 
