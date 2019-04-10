@@ -30,7 +30,18 @@ body {
     font-family: 'Overpass', serif;
     color: #000;
     font-size: 1.5rem;
-    border: 2px solid rgba(134,201,81, 0.4);
+    border: 2px solid rgba(134,201,81, 0.6);
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
 }
 
 .nav-tabs > li {
