@@ -552,6 +552,13 @@ app.layout = html.Div(
     children=[
         jumbotron,
         body,
+        html.Div([
+            dbc.Button(
+                ["Kids At Play- EP", dbc.Badge("Louis The Child", color="light", className="ml-1")],
+                color="primary",
+            )
+        ]
+        ),
         html.Div(
             [html.P("Built by Spec with 💚 and data")],
             className='footer-text')
