@@ -445,7 +445,7 @@ tab1_content = (
                                 ),
                                 html.Div(id='output-container')
                             ]),
-                            html.P(prose_df.loc["week_ratios", "title"]),
+                            html.H2(prose_df.loc["week_ratios", "title"]),
                             html.P(prose_df.loc["week_ratios", "prose_1"]),
                             html.P(prose_df.loc["week_ratios", "prose_2"]),
                             dcc.Graph(
@@ -531,7 +531,7 @@ app.layout = html.Div(
     children=[
         jumbotron,
         body
-        #html.P("Built by Spec with 👐 and data")
+        html.P("Built by Spec with 👐 and data")
     ]
 )
 

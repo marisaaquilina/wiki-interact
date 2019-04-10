@@ -5,6 +5,10 @@ h1, h2 {
     padding-bottom: 25px;
 }
 
+body {
+    font-size: 1.5rem;
+}
+
 .jumbotron p {
     font-size: 1.5rem;
 }
@@ -14,7 +18,7 @@ h1, h2 {
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    background-color: rgba(134,201,81, 0.2);
+    border: 2px solid rgba(134,201,81, 0.4);
     color: #000;
 }
 
