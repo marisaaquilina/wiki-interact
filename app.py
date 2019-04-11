@@ -641,6 +641,7 @@ tab2_content = (
     dcc.Graph(
         figure= travis_fig
     ),
+    html.P(prose_df.loc["travis", "prose_2"]),
     html.H2(prose_df.loc["lil_peep", "title"]),
     html.P(prose_df.loc["lil_peep", "prose_1"]),
     dcc.Graph(

@@ -30,6 +30,7 @@
    },
    "travis": {
       "title":"Do Certain Artists Release Music Cyclically, Staying in the Top 200's Chart?",
-      "prose_1": "How do songs by artists with multiple USA Top 200 hits in this time frame interact with each other over time? Are top hits by the same artist usually on the charts together? Knowing the history and chart tendencies of an artist can help us predict when they will release music again."
+      "prose_1": "How do songs by artists with multiple USA Top 200 hits in this time frame interact with each other over time? Are top hits by the same artist usually on the charts together? Knowing the history and chart tendencies of an artist can help us predict when they will release music again. \nLet’s see if there are any consistent trends of Travis Scott’s top 5 songs.",
+      "prose_2": "It appears that all of his top 5 songs are off of Astroworld, and all but the single Butterfly Effect appear on the chart after Astroworld was released. There does not appear to be any helpful predictive trend here--perhaps we will have more luck looking at other artists."
    }
 }
