@@ -12,6 +12,7 @@ ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_streams_df = pd.read_csv('top_streams.csv')
 spec_ratios_df = pd.read_csv('spec_ratios.csv')
+travis_df = pd.read_csv('travis.csv')
 top_df = pd.read_csv('top.csv')
 lil_peep_df = pd.read_csv('lil_peep.csv')
 x_df = pd.read_csv('x.csv')
@@ -24,6 +25,47 @@ low_ratios_vals = ratios_df.ratio[len-5:len].tolist()
 low_ratios_labels = ratios_df.Artist[len-5:len].tolist()
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
+
+song_1 = travis_df[travis_df.track_name == "SICKO MODE"]
+song_2 = travis_df[travis_df.track_name == "Butterfly Effect"]
+song_3 = travis_df[travis_df.track_name == "CAROUSEL"]
+song_4 = travis_df[travis_df.track_name == "R.I.P. SCREW"]
+song_5 = travis_df[travis_df.track_name == "STARGAZING"]
+
+travis_1 = go.Scatter(
+                x= song_1.date,
+                y= song_1.mean_streams,
+                name = "SICKO MODE",
+                line = dict(color = '#90DAB5'),
+                opacity = 0.8)
+
+travis_2 = go.Scatter(
+                x=song_2.date,
+                y=song_2.mean_streams,
+                name = "Butterfly Effect",
+                line = dict(color = '#90DAB5'),
+                opacity = 0.8)
+
+travis_3 = go.Scatter(
+                x=song_3.date,
+                y=song_3.mean_streams,
+                name = "CAROUSEL",
+                line = dict(color = '#90DAB5'),
+                opacity = 0.8)
+
+travis_4 = go.Scatter(
+                x=song_4.date,
+                y=song_4.mean_streams,
+                name = "R.I.P. SCREW",
+                line = dict(color = '#90DAB5'),
+                opacity = 0.8)
+
+travis_5 = go.Scatter(
+                x=song_5.date,
+                y=song_5.mean_streams,
+                name = "STARGAZING",
+                line = dict(color = '#90DAB5'),
+                opacity = 0.8)
 
 ozuna = go.Scatter(
                 x=top_streams_df[top_streams_df.artist == "Ozuna"].date,
@@ -264,10 +306,10 @@ lil_peep_data = [lil_peep, trace0]
 lil_peep_pos_data = [lil_peep_pos, trace1]
 x_streams_data = [x_streams, trace_x]
 x_pos_data = [x_pos, trace_x_pos]
+travis_data = [travis_1, travis_2, travis_3, travis_4, travis_5]
 
-beer_layout = go.Layout(
-    barmode='group',
-    title = 'Beer Comparison'
+travis_layout = go.Layout(
+    title = "Travis Scott's Top Songs",
 )
 
 top_layout = go.Layout(
@@ -515,6 +557,7 @@ jumbotron = dbc.Jumbotron(
 )
 
 stock_fig = go.Figure(data=top_data, layout=top_layout)
+travis_fig = go.Figure(data=travis_data, layout=travis_layout)
 top_ratio_fig = go.Figure(data=stream_ratio_data, layout=top_ratio_layout)
 low_ratio_fig = go.Figure(data=low_stream_ratio_data, layout=low_ratio_layout)
 peep_fig = go.Figure(data = lil_peep_data, layout = lil_peep_layout)
@@ -587,6 +630,11 @@ tab1_content = (
 )
 
 tab2_content = (
+    html.H2(prose_df.loc["travis", "title"]),
+    html.H2(prose_df.loc["travis", "prose_1"]),
+    dcc.Graph(
+        figure= travis_fig
+    ),
     html.H2(prose_df.loc["lil_peep", "title"]),
     html.P(prose_df.loc["lil_peep", "prose_1"]),
     dcc.Graph(
@@ -731,6 +779,12 @@ body = dbc.Container(
                                     ["Salad Days", dbc.Badge("Mac DeMarco", color="light", className="ml-1")],
                                     color="success",
                                 ), href="https://open.spotify.com/album/1l9d1Zj9Iv2eOcdObVhdMy", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["In the Aeroplane Over the Sea", dbc.Badge("Neutral Milk Hotel", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="", target="_blank"
                             ),
 
                         ])
