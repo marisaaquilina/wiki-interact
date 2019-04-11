@@ -27,5 +27,9 @@
    "x":{
       "title": "XXXTentacion's Popularity by Album Drops",
       "prose_1":"Similarly, we see a spike in streams at each of XXXTentacion’s album drops and after his death in which his average number of streams remains higher than his previous trend. We can also see a mini spike in streams around March 2 just before ? dropped due to the release of--you guessed it--SAD!"
+   },
+   "travis": {
+      "title":"Do Certain Artists Release Music Cyclically, Staying in the Top 200's Chart?",
+      "prose_1": "How do songs by artists with multiple USA Top 200 hits in this time frame interact with each other over time? Are top hits by the same artist usually on the charts together? Knowing the history and chart tendencies of an artist can help us predict when they will release music again."
    }
 }
