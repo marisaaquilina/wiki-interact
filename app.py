@@ -588,9 +588,11 @@ tab1_content = (
 
 tab2_content = (
     html.H2(prose_df.loc["lil_peep", "title"]),
+    html.P(prose_df.loc["lil_peep", "prose_1"]),
     dcc.Graph(
         figure= peep_fig
     ),
+    html.P(prose_df.loc["lil_peep", "prose_2"]),
     dcc.Graph(
         figure= peep_pos_fig
     ),
@@ -600,7 +602,8 @@ tab2_content = (
     ),
     dcc.Graph(
         figure=x_pos_fig
-    )
+    ),
+    html.P(prose_df.loc["x", "prose_1"])
 )
 
 tabs = dbc.Tabs(
