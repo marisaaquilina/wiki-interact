@@ -43,28 +43,28 @@ travis_2 = go.Scatter(
                 x=song_2.date,
                 y=song_2.mean_streams,
                 name = "Butterfly Effect",
-                line = dict(color = '#90DAB5'),
+                line = dict(color = '#3F94AB'),
                 opacity = 0.8)
 
 travis_3 = go.Scatter(
                 x=song_3.date,
                 y=song_3.mean_streams,
                 name = "CAROUSEL",
-                line = dict(color = '#90DAB5'),
+                line = dict(color = '#6285B2'),
                 opacity = 0.8)
 
 travis_4 = go.Scatter(
                 x=song_4.date,
                 y=song_4.mean_streams,
                 name = "R.I.P. SCREW",
-                line = dict(color = '#90DAB5'),
+                line = dict(color = '#4B4782'),
                 opacity = 0.8)
 
 travis_5 = go.Scatter(
                 x=song_5.date,
                 y=song_5.mean_streams,
                 name = "STARGAZING",
-                line = dict(color = '#90DAB5'),
+                line = dict(color = '#3E3E3E'),
                 opacity = 0.8)
 
 ozuna = go.Scatter(
@@ -195,7 +195,7 @@ stream_ratio = go.Bar(
 low_stream_ratio = go.Bar(
     x=spec_ratios_df.ratio.tolist(),
     y=spec_ratios_df.Artist.tolist(),
-    text=[str(i)[1:4] + ' times more weekday streams' for i in spec_ratios_df.ratio.tolist()],
+    text=[str(i)[1:4] + 'more weekday streams' for i in spec_ratios_df.ratio.tolist()],
     textposition='auto',
     orientation='h',
     marker=dict(
@@ -323,11 +323,17 @@ top_layout = go.Layout(
 )
 
 top_ratio_layout = go.Layout(
-    title = "Artists with Lowest Weekend to Weekday Stream Ratios",
+    title = "Artists with Lowest Weekend to Weekend Stream Ratios",
+    xaxis = dict(
+        range = [0,1.5]
+    ),
 )
 
 low_ratio_layout = go.Layout(
     title= "Artists with Highest Weekend to Weekday Stream Ratios",
+    xaxis = dict(
+        range = [0,1.5]
+    ),
 )
 
 lil_peep_layout = {
@@ -631,7 +637,7 @@ tab1_content = (
 
 tab2_content = (
     html.H2(prose_df.loc["travis", "title"]),
-    html.H2(prose_df.loc["travis", "prose_1"]),
+    html.P(prose_df.loc["travis", "prose_1"]),
     dcc.Graph(
         figure= travis_fig
     ),
