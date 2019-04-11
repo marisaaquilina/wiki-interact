@@ -281,11 +281,11 @@ top_layout = go.Layout(
 )
 
 top_ratio_layout = go.Layout(
-    title = "Artists with Highest Weekend to Weekday Stream Ratios",
+    title = "Artists with Lowest Weekend to Weekday Stream Ratios",
 )
 
 low_ratio_layout = go.Layout(
-    title= "Selected Artists' Weekend to Weekday Stream Ratios",
+    title= "Artists with Highest Weekend to Weekday Stream Ratios",
 )
 
 lil_peep_layout = {
@@ -558,11 +558,11 @@ tab1_content = (
                             html.P(prose_df.loc["week_ratios", "prose_2"]),
                             html.P(prose_df.loc["week_ratios", "prose_3"]),
                             dcc.Graph(
-                                 figure=top_ratio_fig
+                                 figure=low_ratio_fig
                             ),
                             html.P(prose_df.loc["week_ratios", "prose_4"]),
                             dcc.Graph(
-                                figure=low_ratio_fig
+                                figure=top_ratio_fig
                             ),
                             html.P(prose_df.loc["song_features", "prose_1"]),
                             dcc.Graph(
