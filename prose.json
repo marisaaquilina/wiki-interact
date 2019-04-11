@@ -17,7 +17,7 @@
    },
    "song_features":{
       "prose_1":"Why did Drake and Ariana Grande have more streams on weekends than weekdays than other artists? You might suspect that music with more party-like qualities are streamed more on weekends, so we looked to the trends of song characteristics throughout the week.",
-      "prose_2":"We can see that songs played on the weekend tend to exhibit higher levels of party-like qualities including danceability, liveness, valence, speechiness, and loudness. The duration of songs also decreased quite a bit on Fridays and Saturdays, which could be because party-like songs tend to be shorter. The acoustic trend appears to be nearly directly inverse of the danceability trend throughout the week, suggesting that these characteristics tend to not co-occur."
+      "prose_2":"We can see that songs played on the weekend tend to exhibit higher levels of party-like qualities including danceability, liveness, valence, speechiness, and loudness. The duration of songs also decreased quite a bit on Fridays and Saturdays, which could be because party-like songs tend to be shorter. The acoustic trend appears to be nearly directly inverse of the danceability trend throughout the week. This means that when people listen to highly acoustic music during the week, they tend to not listen to as much danceable music and vice versa."
    },
    "lil_peep": {
       "title": "Lil Peep's Popularity Posthumously",
