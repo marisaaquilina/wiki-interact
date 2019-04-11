@@ -21,10 +21,11 @@
    },
    "lil_peep": {
       "title": "Lil Peep's Popularity Posthumously",
-      "prose_1":"Lil Peep was a mostly underground artist before his death. After his death, many people started to listen to more of this music and he gained a lot of fame. Let's see if this is reflected on the Spotify top charts."
+      "prose_1":"Lil Peep was a mostly underground artist before his death. After his death, many people started to listen to more of this music and he gained a lot of fame. Let's see if this is reflected on the Spotify top charts.",
+      "prose_2": "After Lil Peep’s fatal drug overdose on November 15, 2017 (test your drugs), he suddenly appears on Spotify’s top 200 chart and began gaining streams. Our sorrows were short lived as he disappeared from the charts just over a month later, not to be seen again until the posthumous release of Falling Down with XXXTentacion. Whether it was his own fame or XXXTentacion’s talent that drove up the streams we won’t say--but we will say that the release of his final album Come Over when You’re Sober, did not stop his downward trend off the charts."
    },
    "x":{
       "title": "XXXTentacion's Popularity by Album Drops",
-      "prose_1":""
+      "prose_1":"Similarly, we see a spike in streams at each of XXXTentacion’s album drops and after his death in which his average number of streams remains higher than his previous trend. We can also see a mini spike in streams around March 2 just before ? dropped due to the release of--you guessed it--SAD!"
    }
 }
