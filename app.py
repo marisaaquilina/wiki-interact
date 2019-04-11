@@ -720,6 +720,19 @@ body = dbc.Container(
                                     color="success",
                                 ), href="https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv", target="_blank"
                             ),
+                            html.A(
+                                dbc.Button(
+                                    ["Doris", dbc.Badge("Earl Sweatshirt", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/5vRfIDOPJHy3W2wHWbzLlE", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Salad Days", dbc.Badge("Mac DeMarco", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/1l9d1Zj9Iv2eOcdObVhdMy", target="_blank"
+                            ),
+
                         ])
                     ],
                     md=12,
