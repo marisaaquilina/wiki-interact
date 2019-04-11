@@ -137,9 +137,9 @@ trace_x_pos = go.Scatter(
 )
 
 stream_ratio = go.Bar(
-    x=ratios_df.ratio[0:5].tolist(),
-    y=ratios_df.Artist[0:5].tolist(),
-    text=[str(i)[1:3] + ' more weekend streams' for i in ratios_df.ratio[0:5].tolist()],
+    x=low_ratios_vals,
+    y=low_ratios_labels,
+    text=[str(i)[1:4] + ' more weekend streams' for i in low_ratios_vals],
     textposition='auto',
     orientation='h',
     marker=dict(
@@ -281,11 +281,11 @@ top_layout = go.Layout(
 )
 
 top_ratio_layout = go.Layout(
-    title = "Artists with Highest Weekday to Weekend Stream Ratios",
+    title = "Artists with Highest Weekend to Weekday Stream Ratios",
 )
 
 low_ratio_layout = go.Layout(
-    title= "Selected Artists' Weekday to Weekend Stream Ratios",
+    title= "Selected Artists' Weekend to Weekday Stream Ratios",
 )
 
 lil_peep_layout = {
