@@ -181,7 +181,7 @@ trace_x_pos = go.Scatter(
 stream_ratio = go.Bar(
     x=low_ratios_vals,
     y=low_ratios_labels,
-    text=[str(i)[1:4] + ' more weekend streams' for i in low_ratios_vals],
+    text=[str(i)[1:4] + ' more weekday streams' for i in low_ratios_vals],
     textposition='auto',
     orientation='h',
     marker=dict(
@@ -195,7 +195,7 @@ stream_ratio = go.Bar(
 low_stream_ratio = go.Bar(
     x=spec_ratios_df.ratio.tolist(),
     y=spec_ratios_df.Artist.tolist(),
-    text=[str(i)[1:4] + 'more weekday streams' for i in spec_ratios_df.ratio.tolist()],
+    text=[str(i)[1:4] + ' more weekend streams' for i in spec_ratios_df.ratio.tolist()],
     textposition='auto',
     orientation='h',
     marker=dict(
@@ -790,7 +790,7 @@ body = dbc.Container(
                                 dbc.Button(
                                     ["In the Aeroplane Over the Sea", dbc.Badge("Neutral Milk Hotel", color="light", className="ml-1")],
                                     color="success",
-                                ), href="", target="_blank"
+                                ), href="https://open.spotify.com/album/5COXoP5kj2DWfCDg0vxi4F", target="_blank"
                             ),
 
                         ])
