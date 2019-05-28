@@ -8,7 +8,6 @@ import datetime
 from plotly import tools
 
 prose_df = pd.read_json("prose.json").T
-ratios_df = pd.read_csv('ratios.csv').dropna()
 streams_df = pd.read_csv('streams.csv').reset_index(drop=True)
 top_streams_df = pd.read_csv('top_streams.csv')
 spec_ratios_df = pd.read_csv('spec_ratios.csv')
@@ -18,11 +17,6 @@ lil_peep_df = pd.read_csv('lil_peep.csv')
 x_df = pd.read_csv('x.csv')
 f_df = pd.read_csv('mean_features.csv')
 options_list = [{'label':artist,'value':artist} for artist in top_df.Artist.unique()]
-
-
-len = ratios_df.ratio.size
-low_ratios_vals = ratios_df.ratio[len-5:len].tolist()
-low_ratios_labels = ratios_df.Artist[len-5:len].tolist()
 
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv")
 
@@ -178,20 +172,6 @@ trace_x_pos = go.Scatter(
     )
 )
 
-stream_ratio = go.Bar(
-    x=low_ratios_vals,
-    y=low_ratios_labels,
-    text=[str(i)[1:4] + ' more weekday streams' for i in low_ratios_vals],
-    textposition='auto',
-    orientation='h',
-    marker=dict(
-        color='rgba(158,202,225,0.6)',
-        line=dict(
-            color='rgba(8,48,107,0.7)',
-            width=1
-        ),
-    )
-)
 low_stream_ratio = go.Bar(
     x=spec_ratios_df.ratio.tolist(),
     y=spec_ratios_df.Artist.tolist(),
