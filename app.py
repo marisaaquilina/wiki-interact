@@ -661,7 +661,119 @@ body = dbc.Container(
                             [html.P("Choose topic")],
                             className="sidenote-text"
                         ),
-                        tabs        
+                        tabs,
+                        html.H2("Looking for Something to Stream?"),
+                        html.P("Our team's favorite albums:"),
+                        html.Div([
+                            html.A(
+                                dbc.Button(
+                                    ["Kids At Play EP", dbc.Badge("Louis The Child", color="light", className="ml-1")],
+                                    color="success",
+                                ), href='https://open.spotify.com/album/21R2CiMVZH2MY514Sq2DIG', target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Attack & Release", dbc.Badge("The Black Keys", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/1YHS3Fw8THvsKVVQ1znAqi", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Rodeo", dbc.Badge("Travis Scott", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/4PWBTB6NYSKQwfo79I3prg", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Swimming", dbc.Badge("Mac Miller", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/5wtE5aLX5r7jOosmPhJhhk", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Blonde", dbc.Badge("Frank Ocean", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/3mH6qwIy9crq0I9YQbOuDf", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Scorpion", dbc.Badge("Drake", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/1ATL5GLyefJaxhQzSPVrLX", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["The Sun's Tirade", dbc.Badge("Isaiah Rashad", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/6jjX8mGrsWtrpYpFhGMrg1", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["My Beautiful Dark Twisted Fantasy", dbc.Badge("Kanye West", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/20r762YmB5HeofjMCiPMLv", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Stoney", dbc.Badge("Post Malone", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/5s0rmjP8XOPhP6HhqOhuyC", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Blue Album", dbc.Badge("Weezer", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/playlist/0XFK5bQFCI72mqiTR94oBM", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Melodrama", dbc.Badge("Lorde", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/2B87zXm9bOWvAJdkJBTpzF", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Camp", dbc.Badge("Childish Gambino", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/32KdoFFhgjCLdU0DWL71tx", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Nation of Two", dbc.Badge("Vance Joy", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/5f6Eu9QtujgGggq5qbbycV", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Section 80", dbc.Badge("Kendrick Lamar", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/13WjgUEEAQp0d9JqojlWp1", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["The Dark Side of the Moon", dbc.Badge("Pink Floyd", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/4LH4d3cOWNNsVw41Gqt2kv", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Doris", dbc.Badge("Earl Sweatshirt", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/5vRfIDOPJHy3W2wHWbzLlE", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["Salad Days", dbc.Badge("Mac DeMarco", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/1l9d1Zj9Iv2eOcdObVhdMy", target="_blank"
+                            ),
+                            html.A(
+                                dbc.Button(
+                                    ["In the Aeroplane Over the Sea", dbc.Badge("Neutral Milk Hotel", color="light", className="ml-1")],
+                                    color="success",
+                                ), href="https://open.spotify.com/album/5COXoP5kj2DWfCDg0vxi4F", target="_blank"
+                            ),
+
                         ])
                     ],
                     md=12,
@@ -685,7 +797,7 @@ app.layout = html.Div(
             className='footer-text')
     ]
 )
-app.title = "Title Goes Here"
+app.title = "Spotify Through the Ears"
 
 if __name__ == '__main__':
     app.run_server(debug=True)
